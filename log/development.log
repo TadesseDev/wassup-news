@@ -4961,3 +4961,547 @@ Started PUT "/__web_console/repl_sessions/6c23903a8df576dfafae9ad0f1918c2f" for 
 Started PUT "/__web_console/repl_sessions/6c23903a8df576dfafae9ad0f1918c2f" for ::1 at 2023-04-09 15:18:24 +0300
   [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."name" = $1 LIMIT $2[0m  [["name", "fghanistan"], ["LIMIT", 1]]
   ↳ app/controllers/news_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2023-04-09 15:19:27 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 21472)
+Completed 200 OK in 47ms (Views: 39.6ms | ActiveRecord: 0.0ms | Allocations: 23964)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:19:28 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:19:28 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:19:29 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:19:29 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:19:30 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:23:26 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 21465)
+Completed 200 OK in 40ms (Views: 34.0ms | ActiveRecord: 0.0ms | Allocations: 23972)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:23:27 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:23:27 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:23:27 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:23:27 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:23:29 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:23:38 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 21484)
+Completed 200 OK in 51ms (Views: 44.7ms | ActiveRecord: 0.0ms | Allocations: 24042)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:23:39 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:23:39 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:23:40 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:23:40 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"usa-today", "name"=>"USA Today"}, "author"=>"Amanda Pérez Pintado", "title"=>"Tesla cuts prices again as it seeks to boost demand - USA TODAY", "description"=>"Tesla cuts prices between 2% to nearly 6%, according to its website....
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"usa-today", "name"=>"USA Today"}, "author"=>"Amanda Pérez Pintado", "title"=>"Tesla cuts prices again as it seeks to boost demand - USA TODAY", "description"=>"Tesla cuts prices between 2% to nearly 6%, according to its website.... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"usa-today", "name"=>"USA Today"}, "author"=>"Amanda Pérez Pintado", "title"=>"Tesla cuts prices again as it seeks to boost demand - USA TODAY", "description"=>"Tesla cuts prices between 2% to nearly 6%, according to its website.... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:23:41 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:29:53 +0300
+Processing by NewsController#index as HTML
+Completed 500 Internal Server Error in 10ms (Allocations: 2968)
+
+
+  
+NoMethodError (undefined method `query_params!' for {:apiKey=>"49aee5edf0084e3f85deb45474c96721", :country=>nil, :page=>1, :pageSize=>10, :q=>nil, :category=>nil}:Hash
+
+    query_params.query_params!
+                ^^^^^^^^^^^^^^):
+  
+app/controllers/news_controller.rb:12:in `index'
+Started GET "/" for ::1 at 2023-04-09 15:30:07 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 21470)
+Completed 200 OK in 48ms (Views: 41.4ms | Allocations: 24020)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:30:07 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:30:08 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:30:08 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:30:08 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: "Error: 400"
+NewsChannel transmitting "Error: 400" (via streamed from NewsChannel)
+NewsChannel transmitting "Error: 400" (via streamed from NewsChannel)
+Started PUT "/__web_console/repl_sessions/9b743bfff4ea1e301aea253b1a911fe6" for ::1 at 2023-04-09 15:30:15 +0300
+Started PUT "/__web_console/repl_sessions/9b743bfff4ea1e301aea253b1a911fe6" for ::1 at 2023-04-09 15:30:19 +0300
+Started PUT "/__web_console/repl_sessions/9b743bfff4ea1e301aea253b1a911fe6" for ::1 at 2023-04-09 15:30:51 +0300
+Started PUT "/__web_console/repl_sessions/9b743bfff4ea1e301aea253b1a911fe6" for ::1 at 2023-04-09 15:30:53 +0300
+Started PUT "/__web_console/repl_sessions/9b743bfff4ea1e301aea253b1a911fe6" for ::1 at 2023-04-09 15:30:58 +0300
+Started PUT "/__web_console/repl_sessions/9b743bfff4ea1e301aea253b1a911fe6" for ::1 at 2023-04-09 15:30:58 +0300
+Started GET "/" for ::1 at 2023-04-09 15:31:00 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 21345)
+Completed 200 OK in 41ms (Views: 35.4ms | Allocations: 23840)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:31:01 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:31:01 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:31:02 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:31:02 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+[ActionCable] Broadcasting to NewsChannel: "Error: 400"
+NewsChannel transmitting "Error: 400" (via streamed from NewsChannel)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started PUT "/__web_console/repl_sessions/8f6cdd0eee017e1185582a78c8555aca" for ::1 at 2023-04-09 15:31:04 +0300
+Started PUT "/__web_console/repl_sessions/8f6cdd0eee017e1185582a78c8555aca" for ::1 at 2023-04-09 15:31:04 +0300
+Started GET "/" for ::1 at 2023-04-09 15:31:55 +0300
+  
+SyntaxError (/home/tadesse/test/wassup/app/controllers/news_controller.rb:6: syntax error, unexpected '?'
+      country: @country ?? "us",
+                         ^
+/home/tadesse/test/wassup/app/controllers/news_controller.rb:6: syntax error, unexpected ',', expecting `end'
+...     country: @country ?? "us",
+...                              ^
+):
+  
+app/controllers/news_controller.rb:6: syntax error, unexpected '?'
+app/controllers/news_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/news_controller.rb:6: syntax error, unexpected '?'
+app/controllers/news_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/news_controller.rb:6: syntax error, unexpected '?'
+app/controllers/news_controller.rb:6: syntax error, unexpected ',', expecting `end'
+Started GET "/" for ::1 at 2023-04-09 15:32:06 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 21480)
+Completed 200 OK in 84ms (Views: 66.8ms | Allocations: 24035)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:32:07 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:32:07 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:32:08 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:32:08 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:32:09 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:33:27 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 21357)
+Completed 200 OK in 56ms (Views: 48.8ms | Allocations: 23906)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:33:28 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:33:28 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:33:28 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:33:28 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:34:25 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2591)
+Completed 200 OK in 13ms (Views: 10.2ms | Allocations: 3460)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:34:25 +0300
+NewsChannel stopped streaming from NewsChannel
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:34:25 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:34:26 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:34:26 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:34:26 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:34:26 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:34:46 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 133.9ms | Allocations: 21504)
+Completed 200 OK in 156ms (Views: 139.1ms | Allocations: 24004)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:34:47 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:34:47 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:34:47 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:34:47 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:35:24 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 49.8ms | Allocations: 21389)
+Completed 200 OK in 60ms (Views: 52.1ms | Allocations: 23938)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:35:25 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:35:25 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:35:25 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:35:25 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:35:31 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 21397)
+Completed 200 OK in 41ms (Views: 34.5ms | Allocations: 24001)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:35:32 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:35:32 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:35:33 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:35:33 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:35:34 +0300
+NewsChannel stopped streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 15:35:46 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 21465)
+Completed 200 OK in 42ms (Views: 34.9ms | Allocations: 24074)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:35:46 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:35:46 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:35:47 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:35:47 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:35:48 +0300
+NewsChannel stopped streaming from NewsChannel
+Started PUT "/__web_console/repl_sessions/61c96d3c05612e774a71070e20bc18b5" for ::1 at 2023-04-09 15:35:53 +0300
+Started PUT "/__web_console/repl_sessions/61c96d3c05612e774a71070e20bc18b5" for ::1 at 2023-04-09 15:35:54 +0300
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Started PUT "/__web_console/repl_sessions/61c96d3c05612e774a71070e20bc18b5" for ::1 at 2023-04-09 15:36:05 +0300
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 15:36:37 +0300
+Processing by NewsController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 2041)
+
+
+  
+ArgumentError (Job arguments to LoadNewsJob must be native JSON types, but :health is a Symbol.
+See https://github.com/sidekiq/sidekiq/wiki/Best-Practices.
+To disable this error, add `Sidekiq.strict_args!(false)` to your initializer.
+):
+  
+app/controllers/news_controller.rb:14:in `index'
+Started GET "/" for ::1 at 2023-04-09 15:36:51 +0300
+Processing by NewsController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 2035)
+
+
+  
+ArgumentError (Job arguments to LoadNewsJob must be native JSON types, but :health is a Symbol.
+See https://github.com/sidekiq/sidekiq/wiki/Best-Practices.
+To disable this error, add `Sidekiq.strict_args!(false)` to your initializer.
+):
+  
+app/controllers/news_controller.rb:14:in `index'
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+Started GET "/" for ::1 at 2023-04-09 15:37:04 +0300
+Processing by NewsController#index as HTML
+Completed 500 Internal Server Error in 7ms (Allocations: 2088)
+
+
+  
+ArgumentError (Job arguments to LoadNewsJob must be native JSON types, but :health is a Symbol.
+See https://github.com/sidekiq/sidekiq/wiki/Best-Practices.
+To disable this error, add `Sidekiq.strict_args!(false)` to your initializer.
+):
+  
+app/controllers/news_controller.rb:14:in `index'
+Started GET "/" for ::1 at 2023-04-09 15:37:12 +0300
+Processing by NewsController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 1981)
+
+
+  
+ArgumentError (Job arguments to LoadNewsJob must be native JSON types, but :health is a Symbol.
+See https://github.com/sidekiq/sidekiq/wiki/Best-Practices.
+To disable this error, add `Sidekiq.strict_args!(false)` to your initializer.
+):
+  
+app/controllers/news_controller.rb:14:in `index'
+Started GET "/" for ::1 at 2023-04-09 15:37:29 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 21469)
+Completed 200 OK in 46ms (Views: 38.8ms | Allocations: 24023)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:37:29 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:37:29 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:37:30 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:37:30 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:37:38 +0300
+Processing by NewsController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 2031)
+
+
+  
+ArgumentError (Job arguments to LoadNewsJob must be native JSON types, but :health is a Symbol.
+See https://github.com/sidekiq/sidekiq/wiki/Best-Practices.
+To disable this error, add `Sidekiq.strict_args!(false)` to your initializer.
+):
+  
+app/controllers/news_controller.rb:14:in `index'
+Started GET "/" for ::1 at 2023-04-09 15:37:53 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 21527)
+Completed 200 OK in 47ms (Views: 40.6ms | Allocations: 24028)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:37:54 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:37:54 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:37:55 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:37:55 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:38:01 +0300
+Processing by NewsController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 2032)
+
+
+  
+ArgumentError (Job arguments to LoadNewsJob must be native JSON types, but :health is a Symbol.
+See https://github.com/sidekiq/sidekiq/wiki/Best-Practices.
+To disable this error, add `Sidekiq.strict_args!(false)` to your initializer.
+):
+  
+app/controllers/news_controller.rb:14:in `index'
+Started GET "/" for ::1 at 2023-04-09 15:39:20 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 21469)
+Completed 200 OK in 54ms (Views: 45.5ms | Allocations: 24024)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:39:21 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:39:21 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:39:21 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:39:21 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:39:34 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 21470)
+Completed 200 OK in 41ms (Views: 34.5ms | Allocations: 24025)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:39:35 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:39:35 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:39:35 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:39:35 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:39:42 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 21495)
+Completed 200 OK in 42ms (Views: 34.9ms | Allocations: 24050)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:39:43 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:39:43 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:39:43 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:39:43 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:39:44 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 15:40:04 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 21461)
+Completed 200 OK in 49ms (Views: 41.8ms | Allocations: 24016)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:40:04 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:40:04 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:40:05 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:40:05 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:40:06 +0300
+NewsChannel stopped streaming from NewsChannel
+Started PUT "/__web_console/repl_sessions/5e370959863140f601d582a0e0aaec10" for ::1 at 2023-04-09 15:40:08 +0300
+Started PUT "/__web_console/repl_sessions/5e370959863140f601d582a0e0aaec10" for ::1 at 2023-04-09 15:40:09 +0300
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 15:41:27 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 21478)
+Completed 200 OK in 43ms (Views: 35.8ms | Allocations: 24032)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 15:41:27 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:41:27 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 15:41:28 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 15:41:28 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"ign", "name"=>"IGN"}, "author"=>"Adam Bankhurst", "title"=>"Star Wars Celebration 2023: Everything Announced So Far - IGN", "description"=>"From three new live-action Star Wars movies from James Mangold, Dave Filoni, and Sharmee... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:41:29 +0300
+NewsChannel stopped streaming from NewsChannel
+Started PUT "/__web_console/repl_sessions/9814be3d85da1e68cfb046d070171427" for ::1 at 2023-04-09 15:41:32 +0300
+Started PUT "/__web_console/repl_sessions/9814be3d85da1e68cfb046d070171427" for ::1 at 2023-04-09 15:41:32 +0300
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:42:08 +0300
+NewsChannel stopped streaming from NewsChannel
