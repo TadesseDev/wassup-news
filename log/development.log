@@ -5505,3 +5505,1585 @@ Started PUT "/__web_console/repl_sessions/9814be3d85da1e68cfb046d070171427" for 
 Started PUT "/__web_console/repl_sessions/9814be3d85da1e68cfb046d070171427" for ::1 at 2023-04-09 15:41:32 +0300
 Finished "/cable" [WebSocket] for ::1 at 2023-04-09 15:42:08 +0300
 NewsChannel stopped streaming from NewsChannel
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3689468597535612465)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (31.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230409081856)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (211.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3689468597535612465)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (11.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (339.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wassup_development"[0m
+  [1m[35m (865.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wassup_test"[0m
+  [1m[35m (1200.2ms)[0m  [1m[35mCREATE DATABASE "wassup_development" ENCODING = 'unicode'[0m
+  [1m[35m (878.2ms)[0m  [1m[35mCREATE DATABASE "wassup_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE[0m
+  [1m[35m (119.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "countries" CASCADE[0m
+  [1m[35m (112.1ms)[0m  [1m[35mCREATE TABLE "countries" ("id" bigserial primary key, "name" character varying, "code" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (87.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (87.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (8.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230409120020)[0m
+  [1m[35m (6.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230409081856),
+(20230409115700);
+
+[0m
+  [1m[35m (88.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-09 16:16:08.547108"], ["updated_at", "2023-04-09 16:16:08.547108"]]
+  [1m[36mTRANSACTION (16.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "b028a11f58c4835c4172d62ce61a601c81e318b0"], ["created_at", "2023-04-09 16:16:08.584210"], ["updated_at", "2023-04-09 16:16:08.584210"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE[0m
+  [1m[35m (91.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "countries" CASCADE[0m
+  [1m[35m (103.6ms)[0m  [1m[35mCREATE TABLE "countries" ("id" bigserial primary key, "name" character varying, "code" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (103.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (104.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230409120020)[0m
+  [1m[35m (6.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230409081856),
+(20230409115700);
+
+[0m
+  [1m[35m (96.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-09 16:16:09.166437"], ["updated_at", "2023-04-09 16:16:09.166437"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-04-09 16:16:09.190551"], ["key", "environment"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "b028a11f58c4835c4172d62ce61a601c81e318b0"], ["created_at", "2023-04-09 16:16:09.214252"], ["updated_at", "2023-04-09 16:16:09.214252"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "business"], ["created_at", "2023-04-09 16:16:09.297017"], ["updated_at", "2023-04-09 16:16:09.297017"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "entertainment"], ["created_at", "2023-04-09 16:16:09.308387"], ["updated_at", "2023-04-09 16:16:09.308387"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "general"], ["created_at", "2023-04-09 16:16:09.317171"], ["updated_at", "2023-04-09 16:16:09.317171"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "health"], ["created_at", "2023-04-09 16:16:09.325482"], ["updated_at", "2023-04-09 16:16:09.325482"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "science"], ["created_at", "2023-04-09 16:16:09.333855"], ["updated_at", "2023-04-09 16:16:09.333855"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sports"], ["created_at", "2023-04-09 16:16:09.342176"], ["updated_at", "2023-04-09 16:16:09.342176"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "technology"], ["created_at", "2023-04-09 16:16:09.350540"], ["updated_at", "2023-04-09 16:16:09.350540"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fghanistan"], ["code", "AF"], ["created_at", "2023-04-09 16:16:09.368279"], ["updated_at", "2023-04-09 16:16:09.368279"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Albania"], ["code", "AL"], ["created_at", "2023-04-09 16:16:09.375061"], ["updated_at", "2023-04-09 16:16:09.375061"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Algeria"], ["code", "DZ"], ["created_at", "2023-04-09 16:16:09.383781"], ["updated_at", "2023-04-09 16:16:09.383781"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Andorra"], ["code", "AD"], ["created_at", "2023-04-09 16:16:09.392125"], ["updated_at", "2023-04-09 16:16:09.392125"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Angola"], ["code", "AO"], ["created_at", "2023-04-09 16:16:09.400571"], ["updated_at", "2023-04-09 16:16:09.400571"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Antigua and Barbuda"], ["code", "AG"], ["created_at", "2023-04-09 16:16:09.408871"], ["updated_at", "2023-04-09 16:16:09.408871"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Argentina"], ["code", "AR"], ["created_at", "2023-04-09 16:16:09.417222"], ["updated_at", "2023-04-09 16:16:09.417222"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Armenia"], ["code", "AM"], ["created_at", "2023-04-09 16:16:09.425420"], ["updated_at", "2023-04-09 16:16:09.425420"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Australia"], ["code", "AU"], ["created_at", "2023-04-09 16:16:09.433829"], ["updated_at", "2023-04-09 16:16:09.433829"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Austria"], ["code", "AT"], ["created_at", "2023-04-09 16:16:09.442185"], ["updated_at", "2023-04-09 16:16:09.442185"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Azerbaijan"], ["code", "AZ"], ["created_at", "2023-04-09 16:16:09.460787"], ["updated_at", "2023-04-09 16:16:09.460787"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bahamas"], ["code", "BS"], ["created_at", "2023-04-09 16:16:09.467500"], ["updated_at", "2023-04-09 16:16:09.467500"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bahrain"], ["code", "BH"], ["created_at", "2023-04-09 16:16:09.475567"], ["updated_at", "2023-04-09 16:16:09.475567"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bangladesh"], ["code", "BD"], ["created_at", "2023-04-09 16:16:09.483848"], ["updated_at", "2023-04-09 16:16:09.483848"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Barbados"], ["code", "BB"], ["created_at", "2023-04-09 16:16:09.492194"], ["updated_at", "2023-04-09 16:16:09.492194"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Belarus"], ["code", "BY"], ["created_at", "2023-04-09 16:16:09.500437"], ["updated_at", "2023-04-09 16:16:09.500437"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Belgium"], ["code", "BE"], ["created_at", "2023-04-09 16:16:09.508811"], ["updated_at", "2023-04-09 16:16:09.508811"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Belize"], ["code", "BZ"], ["created_at", "2023-04-09 16:16:09.516718"], ["updated_at", "2023-04-09 16:16:09.516718"]]
+  [1m[36mTRANSACTION (79.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Benin"], ["code", "BJ"], ["created_at", "2023-04-09 16:16:09.601978"], ["updated_at", "2023-04-09 16:16:09.601978"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bhutan"], ["code", "BT"], ["created_at", "2023-04-09 16:16:09.619173"], ["updated_at", "2023-04-09 16:16:09.619173"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bolivia (Plurinational State of)"], ["code", "BO"], ["created_at", "2023-04-09 16:16:09.635759"], ["updated_at", "2023-04-09 16:16:09.635759"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bosnia and Herzegovina"], ["code", "BA"], ["created_at", "2023-04-09 16:16:09.652499"], ["updated_at", "2023-04-09 16:16:09.652499"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Botswana"], ["code", "BW"], ["created_at", "2023-04-09 16:16:09.669080"], ["updated_at", "2023-04-09 16:16:09.669080"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brazil"], ["code", "BR"], ["created_at", "2023-04-09 16:16:09.685713"], ["updated_at", "2023-04-09 16:16:09.685713"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brunei Darussalam"], ["code", "BN"], ["created_at", "2023-04-09 16:16:09.702473"], ["updated_at", "2023-04-09 16:16:09.702473"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bulgaria"], ["code", "BG"], ["created_at", "2023-04-09 16:16:09.719069"], ["updated_at", "2023-04-09 16:16:09.719069"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Burkina Faso"], ["code", "BF"], ["created_at", "2023-04-09 16:16:09.735719"], ["updated_at", "2023-04-09 16:16:09.735719"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Burundi"], ["code", "BI"], ["created_at", "2023-04-09 16:16:09.752289"], ["updated_at", "2023-04-09 16:16:09.752289"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cabo Verde"], ["code", "CV"], ["created_at", "2023-04-09 16:16:09.769114"], ["updated_at", "2023-04-09 16:16:09.769114"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cambodia"], ["code", "KH"], ["created_at", "2023-04-09 16:16:09.785936"], ["updated_at", "2023-04-09 16:16:09.785936"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cameroon"], ["code", "CM"], ["created_at", "2023-04-09 16:16:09.802469"], ["updated_at", "2023-04-09 16:16:09.802469"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Canada"], ["code", "CA"], ["created_at", "2023-04-09 16:16:09.818941"], ["updated_at", "2023-04-09 16:16:09.818941"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Central African Republic"], ["code", "CF"], ["created_at", "2023-04-09 16:16:09.835715"], ["updated_at", "2023-04-09 16:16:09.835715"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chad"], ["code", "TD"], ["created_at", "2023-04-09 16:16:09.852543"], ["updated_at", "2023-04-09 16:16:09.852543"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chile"], ["code", "CL"], ["created_at", "2023-04-09 16:16:09.868667"], ["updated_at", "2023-04-09 16:16:09.868667"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "China"], ["code", "CN"], ["created_at", "2023-04-09 16:16:09.885300"], ["updated_at", "2023-04-09 16:16:09.885300"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Colombia"], ["code", "CO"], ["created_at", "2023-04-09 16:16:09.901839"], ["updated_at", "2023-04-09 16:16:09.901839"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Comoros"], ["code", "KM"], ["created_at", "2023-04-09 16:16:09.918596"], ["updated_at", "2023-04-09 16:16:09.918596"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Congo"], ["code", "CG"], ["created_at", "2023-04-09 16:16:09.935234"], ["updated_at", "2023-04-09 16:16:09.935234"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Costa Rica"], ["code", "CR"], ["created_at", "2023-04-09 16:16:09.951960"], ["updated_at", "2023-04-09 16:16:09.951960"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Côte d'Ivoire"], ["code", "CI"], ["created_at", "2023-04-09 16:16:09.968760"], ["updated_at", "2023-04-09 16:16:09.968760"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Croatia"], ["code", "HR"], ["created_at", "2023-04-09 16:16:09.985303"], ["updated_at", "2023-04-09 16:16:09.985303"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cuba"], ["code", "CU"], ["created_at", "2023-04-09 16:16:10.001924"], ["updated_at", "2023-04-09 16:16:10.001924"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cyprus"], ["code", "CY"], ["created_at", "2023-04-09 16:16:10.018544"], ["updated_at", "2023-04-09 16:16:10.018544"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Czech Republic"], ["code", "CZ"], ["created_at", "2023-04-09 16:16:10.035234"], ["updated_at", "2023-04-09 16:16:10.035234"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Democratic People's Republic of Korea"], ["code", "KP"], ["created_at", "2023-04-09 16:16:10.051955"], ["updated_at", "2023-04-09 16:16:10.051955"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Democratic Republic of the Congo"], ["code", "CD"], ["created_at", "2023-04-09 16:16:10.068776"], ["updated_at", "2023-04-09 16:16:10.068776"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Denmark"], ["code", "DK"], ["created_at", "2023-04-09 16:16:10.085446"], ["updated_at", "2023-04-09 16:16:10.085446"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Djibouti"], ["code", "DJ"], ["created_at", "2023-04-09 16:16:10.102063"], ["updated_at", "2023-04-09 16:16:10.102063"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dominica"], ["code", "DM"], ["created_at", "2023-04-09 16:16:10.118707"], ["updated_at", "2023-04-09 16:16:10.118707"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dominican Republic"], ["code", "DO"], ["created_at", "2023-04-09 16:16:10.135228"], ["updated_at", "2023-04-09 16:16:10.135228"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ecuador"], ["code", "EC"], ["created_at", "2023-04-09 16:16:10.152072"], ["updated_at", "2023-04-09 16:16:10.152072"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Egypt"], ["code", "EG"], ["created_at", "2023-04-09 16:16:10.168738"], ["updated_at", "2023-04-09 16:16:10.168738"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "El Salvador"], ["code", "SV"], ["created_at", "2023-04-09 16:16:10.184529"], ["updated_at", "2023-04-09 16:16:10.184529"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Equatorial Guinea"], ["code", "GQ"], ["created_at", "2023-04-09 16:16:10.201603"], ["updated_at", "2023-04-09 16:16:10.201603"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Eritrea"], ["code", "ER"], ["created_at", "2023-04-09 16:16:10.218208"], ["updated_at", "2023-04-09 16:16:10.218208"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Estonia"], ["code", "EE"], ["created_at", "2023-04-09 16:16:10.234861"], ["updated_at", "2023-04-09 16:16:10.234861"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ethiopia"], ["code", "ET"], ["created_at", "2023-04-09 16:16:10.251172"], ["updated_at", "2023-04-09 16:16:10.251172"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fiji"], ["code", "FJ"], ["created_at", "2023-04-09 16:16:10.278955"], ["updated_at", "2023-04-09 16:16:10.278955"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Finland"], ["code", "FI"], ["created_at", "2023-04-09 16:16:10.296741"], ["updated_at", "2023-04-09 16:16:10.296741"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "France"], ["code", "FR"], ["created_at", "2023-04-09 16:16:10.309849"], ["updated_at", "2023-04-09 16:16:10.309849"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Gabon"], ["code", "GA"], ["created_at", "2023-04-09 16:16:10.326238"], ["updated_at", "2023-04-09 16:16:10.326238"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Gambia"], ["code", "GM"], ["created_at", "2023-04-09 16:16:10.343148"], ["updated_at", "2023-04-09 16:16:10.343148"]]
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Georgia"], ["code", "GE"], ["created_at", "2023-04-09 16:16:10.359717"], ["updated_at", "2023-04-09 16:16:10.359717"]]
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Germany"], ["code", "DE"], ["created_at", "2023-04-09 16:16:10.383439"], ["updated_at", "2023-04-09 16:16:10.383439"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ghana"], ["code", "GH"], ["created_at", "2023-04-09 16:16:10.391710"], ["updated_at", "2023-04-09 16:16:10.391710"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Greece"], ["code", "GR"], ["created_at", "2023-04-09 16:16:10.400055"], ["updated_at", "2023-04-09 16:16:10.400055"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Grenada"], ["code", "GD"], ["created_at", "2023-04-09 16:16:10.408369"], ["updated_at", "2023-04-09 16:16:10.408369"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Guatemala"], ["code", "GT"], ["created_at", "2023-04-09 16:16:10.416686"], ["updated_at", "2023-04-09 16:16:10.416686"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Guinea"], ["code", "GN"], ["created_at", "2023-04-09 16:16:10.425015"], ["updated_at", "2023-04-09 16:16:10.425015"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Guinea-Bissau"], ["code", "GW"], ["created_at", "2023-04-09 16:16:10.433487"], ["updated_at", "2023-04-09 16:16:10.433487"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Guyana"], ["code", "GY"], ["created_at", "2023-04-09 16:16:10.441859"], ["updated_at", "2023-04-09 16:16:10.441859"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Haiti"], ["code", "HT"], ["created_at", "2023-04-09 16:16:10.450217"], ["updated_at", "2023-04-09 16:16:10.450217"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Honduras"], ["code", "HN"], ["created_at", "2023-04-09 16:16:10.458602"], ["updated_at", "2023-04-09 16:16:10.458602"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Honduras"], ["code", "HN"], ["created_at", "2023-04-09 16:16:10.466748"], ["updated_at", "2023-04-09 16:16:10.466748"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hong Kong"], ["code", "HK"], ["created_at", "2023-04-09 16:16:10.475120"], ["updated_at", "2023-04-09 16:16:10.475120"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hungary"], ["code", "HU"], ["created_at", "2023-04-09 16:16:10.483618"], ["updated_at", "2023-04-09 16:16:10.483618"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Iceland"], ["code", "IS"], ["created_at", "2023-04-09 16:16:10.491940"], ["updated_at", "2023-04-09 16:16:10.491940"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "India"], ["code", "IN"], ["created_at", "2023-04-09 16:16:10.500223"], ["updated_at", "2023-04-09 16:16:10.500223"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Indonesia"], ["code", "ID"], ["created_at", "2023-04-09 16:16:10.508596"], ["updated_at", "2023-04-09 16:16:10.508596"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Iran"], ["code", "IR"], ["created_at", "2023-04-09 16:16:10.516854"], ["updated_at", "2023-04-09 16:16:10.516854"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Iraq"], ["code", "IQ"], ["created_at", "2023-04-09 16:16:10.525186"], ["updated_at", "2023-04-09 16:16:10.525186"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ireland"], ["code", "IE"], ["created_at", "2023-04-09 16:16:10.533592"], ["updated_at", "2023-04-09 16:16:10.533592"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Isle of Man"], ["code", "IM"], ["created_at", "2023-04-09 16:16:10.541899"], ["updated_at", "2023-04-09 16:16:10.541899"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Israel"], ["code", "IL"], ["created_at", "2023-04-09 16:16:10.550227"], ["updated_at", "2023-04-09 16:16:10.550227"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Italy"], ["code", "IT"], ["created_at", "2023-04-09 16:16:10.558575"], ["updated_at", "2023-04-09 16:16:10.558575"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Jamaica"], ["code", "JM"], ["created_at", "2023-04-09 16:16:10.566843"], ["updated_at", "2023-04-09 16:16:10.566843"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Japan"], ["code", "JP"], ["created_at", "2023-04-09 16:16:10.575208"], ["updated_at", "2023-04-09 16:16:10.575208"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Jersey"], ["code", "JE"], ["created_at", "2023-04-09 16:16:10.583584"], ["updated_at", "2023-04-09 16:16:10.583584"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Jordan"], ["code", "JO"], ["created_at", "2023-04-09 16:16:10.591926"], ["updated_at", "2023-04-09 16:16:10.591926"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kazakhstan"], ["code", "KZ"], ["created_at", "2023-04-09 16:16:10.600264"], ["updated_at", "2023-04-09 16:16:10.600264"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kenya"], ["code", "KE"], ["created_at", "2023-04-09 16:16:10.608595"], ["updated_at", "2023-04-09 16:16:10.608595"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kiribati"], ["code", "KI"], ["created_at", "2023-04-09 16:16:10.616752"], ["updated_at", "2023-04-09 16:16:10.616752"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kuwait"], ["code", "KW"], ["created_at", "2023-04-09 16:16:10.625188"], ["updated_at", "2023-04-09 16:16:10.625188"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kyrgyzstan"], ["code", "KG"], ["created_at", "2023-04-09 16:16:10.633687"], ["updated_at", "2023-04-09 16:16:10.633687"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Laos"], ["code", "LA"], ["created_at", "2023-04-09 16:16:10.641967"], ["updated_at", "2023-04-09 16:16:10.641967"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Latvia"], ["code", "LV"], ["created_at", "2023-04-09 16:16:10.650318"], ["updated_at", "2023-04-09 16:16:10.650318"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lebanon"], ["code", "LB"], ["created_at", "2023-04-09 16:16:10.658699"], ["updated_at", "2023-04-09 16:16:10.658699"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lesotho"], ["code", "LS"], ["created_at", "2023-04-09 16:16:10.666885"], ["updated_at", "2023-04-09 16:16:10.666885"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Liberia"], ["code", "LR"], ["created_at", "2023-04-09 16:16:10.675235"], ["updated_at", "2023-04-09 16:16:10.675235"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Libya"], ["code", "LY"], ["created_at", "2023-04-09 16:16:10.683561"], ["updated_at", "2023-04-09 16:16:10.683561"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Liechtenstein"], ["code", "LI"], ["created_at", "2023-04-09 16:16:10.691908"], ["updated_at", "2023-04-09 16:16:10.691908"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lithuania"], ["code", "LT"], ["created_at", "2023-04-09 16:16:10.700376"], ["updated_at", "2023-04-09 16:16:10.700376"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Luxembourg"], ["code", "LU"], ["created_at", "2023-04-09 16:16:10.708709"], ["updated_at", "2023-04-09 16:16:10.708709"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Macao"], ["code", "MO"], ["created_at", "2023-04-09 16:16:10.716872"], ["updated_at", "2023-04-09 16:16:10.716872"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Madagascar"], ["code", "MG"], ["created_at", "2023-04-09 16:16:10.725284"], ["updated_at", "2023-04-09 16:16:10.725284"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Malawi"], ["code", "MW"], ["created_at", "2023-04-09 16:16:10.733603"], ["updated_at", "2023-04-09 16:16:10.733603"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Malaysia"], ["code", "MY"], ["created_at", "2023-04-09 16:16:10.741981"], ["updated_at", "2023-04-09 16:16:10.741981"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Maldives"], ["code", "MV"], ["created_at", "2023-04-09 16:16:10.750280"], ["updated_at", "2023-04-09 16:16:10.750280"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mali"], ["code", "ML"], ["created_at", "2023-04-09 16:16:10.758668"], ["updated_at", "2023-04-09 16:16:10.758668"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Malta"], ["code", "MT"], ["created_at", "2023-04-09 16:16:10.766879"], ["updated_at", "2023-04-09 16:16:10.766879"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Marshall Islands"], ["code", "MH"], ["created_at", "2023-04-09 16:16:10.775086"], ["updated_at", "2023-04-09 16:16:10.775086"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Martinique"], ["code", "MQ"], ["created_at", "2023-04-09 16:16:10.783412"], ["updated_at", "2023-04-09 16:16:10.783412"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mauritania"], ["code", "MR"], ["created_at", "2023-04-09 16:16:10.791911"], ["updated_at", "2023-04-09 16:16:10.791911"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mauritius"], ["code", "MU"], ["created_at", "2023-04-09 16:16:10.800283"], ["updated_at", "2023-04-09 16:16:10.800283"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mayotte"], ["code", "YT"], ["created_at", "2023-04-09 16:16:10.808579"], ["updated_at", "2023-04-09 16:16:10.808579"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mexico"], ["code", "MX"], ["created_at", "2023-04-09 16:16:10.816773"], ["updated_at", "2023-04-09 16:16:10.816773"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Micronesia"], ["code", "FM"], ["created_at", "2023-04-09 16:16:10.826669"], ["updated_at", "2023-04-09 16:16:10.826669"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Moldova"], ["code", "MD"], ["created_at", "2023-04-09 16:16:10.833771"], ["updated_at", "2023-04-09 16:16:10.833771"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Monaco"], ["code", "MC"], ["created_at", "2023-04-09 16:16:10.841915"], ["updated_at", "2023-04-09 16:16:10.841915"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mongolia"], ["code", "MN"], ["created_at", "2023-04-09 16:16:10.850227"], ["updated_at", "2023-04-09 16:16:10.850227"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Montenegro"], ["code", "ME"], ["created_at", "2023-04-09 16:16:10.858650"], ["updated_at", "2023-04-09 16:16:10.858650"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Montserrat"], ["code", "MS"], ["created_at", "2023-04-09 16:16:10.866964"], ["updated_at", "2023-04-09 16:16:10.866964"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Morocco"], ["code", "MA"], ["created_at", "2023-04-09 16:16:10.875310"], ["updated_at", "2023-04-09 16:16:10.875310"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.3ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mozambique"], ["code", "MZ"], ["created_at", "2023-04-09 16:16:10.883567"], ["updated_at", "2023-04-09 16:16:10.883567"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Myanmar"], ["code", "MM"], ["created_at", "2023-04-09 16:16:10.893505"], ["updated_at", "2023-04-09 16:16:10.893505"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Namibia"], ["code", "NA"], ["created_at", "2023-04-09 16:16:10.910178"], ["updated_at", "2023-04-09 16:16:10.910178"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nauru"], ["code", "NR"], ["created_at", "2023-04-09 16:16:10.926740"], ["updated_at", "2023-04-09 16:16:10.926740"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nepal"], ["code", "NP"], ["created_at", "2023-04-09 16:16:10.943448"], ["updated_at", "2023-04-09 16:16:10.943448"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Netherlands"], ["code", "NL"], ["created_at", "2023-04-09 16:16:10.960205"], ["updated_at", "2023-04-09 16:16:10.960205"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "New Caledonia"], ["code", "NC"], ["created_at", "2023-04-09 16:16:10.977269"], ["updated_at", "2023-04-09 16:16:10.977269"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "New Zealand"], ["code", "NZ"], ["created_at", "2023-04-09 16:16:10.993896"], ["updated_at", "2023-04-09 16:16:10.993896"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nicaragua"], ["code", "NI"], ["created_at", "2023-04-09 16:16:11.010533"], ["updated_at", "2023-04-09 16:16:11.010533"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Niger"], ["code", "NE"], ["created_at", "2023-04-09 16:16:11.027134"], ["updated_at", "2023-04-09 16:16:11.027134"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nigeria"], ["code", "NG"], ["created_at", "2023-04-09 16:16:11.043880"], ["updated_at", "2023-04-09 16:16:11.043880"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Niue"], ["code", "NU"], ["created_at", "2023-04-09 16:16:11.060555"], ["updated_at", "2023-04-09 16:16:11.060555"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Norfolk Island"], ["code", "NF"], ["created_at", "2023-04-09 16:16:11.077004"], ["updated_at", "2023-04-09 16:16:11.077004"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "North Korea"], ["code", "KP"], ["created_at", "2023-04-09 16:16:11.093522"], ["updated_at", "2023-04-09 16:16:11.093522"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "North Macedonia"], ["code", "MK"], ["created_at", "2023-04-09 16:16:11.110262"], ["updated_at", "2023-04-09 16:16:11.110262"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Northern Mariana Islands"], ["code", "MP"], ["created_at", "2023-04-09 16:16:11.126818"], ["updated_at", "2023-04-09 16:16:11.126818"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Norway"], ["code", "NO"], ["created_at", "2023-04-09 16:16:11.143561"], ["updated_at", "2023-04-09 16:16:11.143561"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Oman"], ["code", "OM"], ["created_at", "2023-04-09 16:16:11.160252"], ["updated_at", "2023-04-09 16:16:11.160252"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pakistan"], ["code", "PK"], ["created_at", "2023-04-09 16:16:11.176933"], ["updated_at", "2023-04-09 16:16:11.176933"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Palau"], ["code", "PW"], ["created_at", "2023-04-09 16:16:11.193602"], ["updated_at", "2023-04-09 16:16:11.193602"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Palestine"], ["code", "PS"], ["created_at", "2023-04-09 16:16:11.210222"], ["updated_at", "2023-04-09 16:16:11.210222"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Panama"], ["code", "PA"], ["created_at", "2023-04-09 16:16:11.226827"], ["updated_at", "2023-04-09 16:16:11.226827"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Papua New Guinea"], ["code", "PG"], ["created_at", "2023-04-09 16:16:11.243831"], ["updated_at", "2023-04-09 16:16:11.243831"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Paraguay"], ["code", "PY"], ["created_at", "2023-04-09 16:16:11.260665"], ["updated_at", "2023-04-09 16:16:11.260665"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Peru"], ["code", "PE"], ["created_at", "2023-04-09 16:16:11.277222"], ["updated_at", "2023-04-09 16:16:11.277222"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Philippines"], ["code", "PH"], ["created_at", "2023-04-09 16:16:11.293864"], ["updated_at", "2023-04-09 16:16:11.293864"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pitcairn"], ["code", "PN"], ["created_at", "2023-04-09 16:16:11.310712"], ["updated_at", "2023-04-09 16:16:11.310712"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Poland"], ["code", "PL"], ["created_at", "2023-04-09 16:16:11.327143"], ["updated_at", "2023-04-09 16:16:11.327143"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Portugal"], ["code", "PT"], ["created_at", "2023-04-09 16:16:11.343632"], ["updated_at", "2023-04-09 16:16:11.343632"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Puerto Rico"], ["code", "PR"], ["created_at", "2023-04-09 16:16:11.360281"], ["updated_at", "2023-04-09 16:16:11.360281"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Qatar"], ["code", "QA"], ["created_at", "2023-04-09 16:16:11.376977"], ["updated_at", "2023-04-09 16:16:11.376977"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Romania"], ["code", "RO"], ["created_at", "2023-04-09 16:16:11.393595"], ["updated_at", "2023-04-09 16:16:11.393595"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Russia"], ["code", "RU"], ["created_at", "2023-04-09 16:16:11.410319"], ["updated_at", "2023-04-09 16:16:11.410319"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Rwanda"], ["code", "RW"], ["created_at", "2023-04-09 16:16:11.426845"], ["updated_at", "2023-04-09 16:16:11.426845"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Saint Kitts and Nevis"], ["code", "KN"], ["created_at", "2023-04-09 16:16:11.443584"], ["updated_at", "2023-04-09 16:16:11.443584"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Saint Lucia"], ["code", "LC"], ["created_at", "2023-04-09 16:16:11.460574"], ["updated_at", "2023-04-09 16:16:11.460574"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Saint Vincent and the Grenadines"], ["code", "VC"], ["created_at", "2023-04-09 16:16:11.476956"], ["updated_at", "2023-04-09 16:16:11.476956"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Samoa"], ["code", "WS"], ["created_at", "2023-04-09 16:16:11.493613"], ["updated_at", "2023-04-09 16:16:11.493613"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "San Marino"], ["code", "SM"], ["created_at", "2023-04-09 16:16:11.510283"], ["updated_at", "2023-04-09 16:16:11.510283"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sao Tome and Principe"], ["code", "ST"], ["created_at", "2023-04-09 16:16:11.526849"], ["updated_at", "2023-04-09 16:16:11.526849"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Saudi Arabia"], ["code", "SA"], ["created_at", "2023-04-09 16:16:11.544051"], ["updated_at", "2023-04-09 16:16:11.544051"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Senegal"], ["code", "SN"], ["created_at", "2023-04-09 16:16:11.560575"], ["updated_at", "2023-04-09 16:16:11.560575"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Serbia"], ["code", "RS"], ["created_at", "2023-04-09 16:16:11.577244"], ["updated_at", "2023-04-09 16:16:11.577244"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Seychelles"], ["code", "SC"], ["created_at", "2023-04-09 16:16:11.593946"], ["updated_at", "2023-04-09 16:16:11.593946"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sierra Leone"], ["code", "SL"], ["created_at", "2023-04-09 16:16:11.610645"], ["updated_at", "2023-04-09 16:16:11.610645"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Singapore"], ["code", "SG"], ["created_at", "2023-04-09 16:16:11.627094"], ["updated_at", "2023-04-09 16:16:11.627094"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Slovakia"], ["code", "SK"], ["created_at", "2023-04-09 16:16:11.643586"], ["updated_at", "2023-04-09 16:16:11.643586"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Slovenia"], ["code", "SI"], ["created_at", "2023-04-09 16:16:11.659568"], ["updated_at", "2023-04-09 16:16:11.659568"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Solomon Islands"], ["code", "SB"], ["created_at", "2023-04-09 16:16:11.676280"], ["updated_at", "2023-04-09 16:16:11.676280"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Somalia"], ["code", "SO"], ["created_at", "2023-04-09 16:16:11.692867"], ["updated_at", "2023-04-09 16:16:11.692867"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "South Africa"], ["code", "ZA"], ["created_at", "2023-04-09 16:16:11.709501"], ["updated_at", "2023-04-09 16:16:11.709501"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "South Sudan"], ["code", "SS"], ["created_at", "2023-04-09 16:16:11.726079"], ["updated_at", "2023-04-09 16:16:11.726079"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Spain"], ["code", "ES"], ["created_at", "2023-04-09 16:16:11.742766"], ["updated_at", "2023-04-09 16:16:11.742766"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sri Lanka"], ["code", "LK"], ["created_at", "2023-04-09 16:16:11.759443"], ["updated_at", "2023-04-09 16:16:11.759443"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sudan"], ["code", "SD"], ["created_at", "2023-04-09 16:16:11.776511"], ["updated_at", "2023-04-09 16:16:11.776511"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Suriname"], ["code", "SR"], ["created_at", "2023-04-09 16:16:11.793194"], ["updated_at", "2023-04-09 16:16:11.793194"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sweden"], ["code", "SE"], ["created_at", "2023-04-09 16:16:11.809910"], ["updated_at", "2023-04-09 16:16:11.809910"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Switzerland"], ["code", "CH"], ["created_at", "2023-04-09 16:16:11.826259"], ["updated_at", "2023-04-09 16:16:11.826259"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Syria"], ["code", "SY"], ["created_at", "2023-04-09 16:16:11.842888"], ["updated_at", "2023-04-09 16:16:11.842888"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Taiwan"], ["code", "TW"], ["created_at", "2023-04-09 16:16:11.859575"], ["updated_at", "2023-04-09 16:16:11.859575"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tajikistan"], ["code", "TJ"], ["created_at", "2023-04-09 16:16:11.876270"], ["updated_at", "2023-04-09 16:16:11.876270"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tanzania"], ["code", "TZ"], ["created_at", "2023-04-09 16:16:11.892925"], ["updated_at", "2023-04-09 16:16:11.892925"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Thailand"], ["code", "TH"], ["created_at", "2023-04-09 16:16:11.909567"], ["updated_at", "2023-04-09 16:16:11.909567"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Timor-Leste"], ["code", "TL"], ["created_at", "2023-04-09 16:16:11.926042"], ["updated_at", "2023-04-09 16:16:11.926042"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Togo"], ["code", "TG"], ["created_at", "2023-04-09 16:16:11.942869"], ["updated_at", "2023-04-09 16:16:11.942869"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tonga"], ["code", "TO"], ["created_at", "2023-04-09 16:16:11.959543"], ["updated_at", "2023-04-09 16:16:11.959543"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Trinidad and Tobago"], ["code", "TT"], ["created_at", "2023-04-09 16:16:11.976248"], ["updated_at", "2023-04-09 16:16:11.976248"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tunisia"], ["code", "TN"], ["created_at", "2023-04-09 16:16:11.992947"], ["updated_at", "2023-04-09 16:16:11.992947"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Turkey"], ["code", "TR"], ["created_at", "2023-04-09 16:16:12.009512"], ["updated_at", "2023-04-09 16:16:12.009512"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Turkmenistan"], ["code", "TM"], ["created_at", "2023-04-09 16:16:12.026072"], ["updated_at", "2023-04-09 16:16:12.026072"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tuvalu"], ["code", "TV"], ["created_at", "2023-04-09 16:16:12.034530"], ["updated_at", "2023-04-09 16:16:12.034530"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Uganda"], ["code", "UG"], ["created_at", "2023-04-09 16:16:12.051247"], ["updated_at", "2023-04-09 16:16:12.051247"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ukraine"], ["code", "UA"], ["created_at", "2023-04-09 16:16:12.067915"], ["updated_at", "2023-04-09 16:16:12.067915"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "United Arab Emirates"], ["code", "AE"], ["created_at", "2023-04-09 16:16:12.084607"], ["updated_at", "2023-04-09 16:16:12.084607"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "United Kingdom"], ["code", "GB"], ["created_at", "2023-04-09 16:16:12.101259"], ["updated_at", "2023-04-09 16:16:12.101259"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "United States"], ["code", "US"], ["created_at", "2023-04-09 16:16:12.109525"], ["updated_at", "2023-04-09 16:16:12.109525"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Uruguay"], ["code", "UY"], ["created_at", "2023-04-09 16:16:12.126184"], ["updated_at", "2023-04-09 16:16:12.126184"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Uzbekistan"], ["code", "UZ"], ["created_at", "2023-04-09 16:16:12.142882"], ["updated_at", "2023-04-09 16:16:12.142882"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vanuatu"], ["code", "VU"], ["created_at", "2023-04-09 16:16:12.159578"], ["updated_at", "2023-04-09 16:16:12.159578"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vatican City"], ["code", "VA"], ["created_at", "2023-04-09 16:16:12.176287"], ["updated_at", "2023-04-09 16:16:12.176287"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Venezuela"], ["code", "VE"], ["created_at", "2023-04-09 16:16:12.192896"], ["updated_at", "2023-04-09 16:16:12.192896"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vietnam"], ["code", "VN"], ["created_at", "2023-04-09 16:16:12.209505"], ["updated_at", "2023-04-09 16:16:12.209505"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.6ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Yemen"], ["code", "YE"], ["created_at", "2023-04-09 16:16:12.226055"], ["updated_at", "2023-04-09 16:16:12.226055"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.9ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Zambia"], ["code", "ZM"], ["created_at", "2023-04-09 16:16:12.234406"], ["updated_at", "2023-04-09 16:16:12.234406"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "code", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Zimbabwe"], ["code", "ZW"], ["created_at", "2023-04-09 16:16:12.251016"], ["updated_at", "2023-04-09 16:16:12.251016"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tadesse Alemayehu Dubale"], ["email", "tadalem26@gmail.com"], ["created_at", "2023-04-09 16:16:12.282300"], ["updated_at", "2023-04-09 16:16:12.282300"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCountry Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[36mCategory Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mUser Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/" for ::1 at 2023-04-09 19:19:41 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 446)
+  Rendered layout layouts/application.html.erb (Duration: 273.8ms | Allocations: 111385)
+Completed 200 OK in 296ms (Views: 278.1ms | ActiveRecord: 0.0ms | Allocations: 118500)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:19:41 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:19:41 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: "Error: 401"
+NewsChannel transmitting "Error: 401" (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:19:52 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 21478)
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 24118)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:19:52 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:19:52 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: "Error: 401"
+NewsChannel transmitting "Error: 401" (via streamed from NewsChannel)
+Started PUT "/__web_console/repl_sessions/f045450275eebb58db51c93485cba4c1" for ::1 at 2023-04-09 19:20:14 +0300
+Started PUT "/__web_console/repl_sessions/f045450275eebb58db51c93485cba4c1" for ::1 at 2023-04-09 19:20:14 +0300
+Started GET "/cable" for ::1 at 2023-04-09 19:21:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:21:11 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:21:12 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 53.0ms | Allocations: 43925)
+Completed 200 OK in 63ms (Views: 55.1ms | ActiveRecord: 0.0ms | Allocations: 49818)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:21:13 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:21:13 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:21:13 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:21:33 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 21395)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 24030)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:21:34 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:21:34 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:21:54 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2624)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3503)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:21:54 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:21:54 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:21:54 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:22:47 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 23665)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 24422)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:22:47 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:22:47 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:22:47 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:24:01 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 22423)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 23169)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:24:02 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:24:02 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:24:02 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:24:46 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 21477)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 24048)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:24:46 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:24:46 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:25:25 +0300
+Processing by NewsController#index as HTML
+[ActionCable] Broadcasting to NewsChannel: "sucess"
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 21525)
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 24345)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:25:26 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:25:26 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:26:32 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 45039)
+Completed 200 OK in 51ms (Views: 45.0ms | ActiveRecord: 0.0ms | Allocations: 50895)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:26:33 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:26:33 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:26:33 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:26:33 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:26:55 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 21512)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 22411)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:26:56 +0300
+NewsChannel stopped streaming from NewsChannel
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:26:56 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:26:56 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:26:56 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:26:56 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:26:56 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:27:11 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 21325)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.0ms | Allocations: 22081)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:27:11 +0300
+NewsChannel stopped streaming from NewsChannel
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:27:11 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:27:12 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:27:12 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:27:12 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:27:12 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:27:35 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 22996)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 25527)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:27:35 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:27:35 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:27:35 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:27:35 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:28:35 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 21499)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 24014)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:28:35 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:28:35 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:28:36 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:28:36 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:28:49 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/newsStack/sidekiq" for ::1 at 2023-04-09 19:29:32 +0300
+Started GET "/newsStack/sidekiq/stylesheets/bootstrap.css" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/stylesheets/application.css" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/javascripts/application.js" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/javascripts/chart.min.js" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/javascripts/chartjs-plugin-annotation.min.js" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/javascripts/dashboard-charts.js" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/javascripts/dashboard.js" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/stylesheets/application-dark.css" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/images/status.png" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/javascripts/base-charts.js" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/stats" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/images/favicon.ico" for ::1 at 2023-04-09 19:29:33 +0300
+Started GET "/newsStack/sidekiq/retries" for ::1 at 2023-04-09 19:29:36 +0300
+Started POST "/newsStack/sidekiq/retries/all/delete" for ::1 at 2023-04-09 19:29:40 +0300
+Started GET "/newsStack/sidekiq/retries" for ::1 at 2023-04-09 19:29:40 +0300
+Started GET "/newsStack/sidekiq/retries" for ::1 at 2023-04-09 19:29:42 +0300
+Started GET "/" for ::1 at 2023-04-09 19:29:46 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2597)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 3448)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:29:46 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:29:46 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:29:46 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:29:47 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:29:47 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:29:48 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:30:08 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 21403)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 23975)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:30:08 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:08 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:30:09 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:09 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:10 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:30:13 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2632)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3509)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:13 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:30:13 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:13 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:30:13 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:13 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:14 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:30:18 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2429)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 3173)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:18 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:30:18 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:18 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:30:18 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:18 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:18 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:30:20 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2429)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 3173)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:20 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:30:20 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:20 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:30:21 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:21 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:21 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:30:49 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 21531)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 24101)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:30:49 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:49 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:30:49 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:49 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:30:51 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:31:11 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 21558)
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 24174)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:31:12 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:31:12 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:31:12 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:31:12 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th...
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+NewsChannel transmitting {"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The second round of th... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:31:13 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:48:50 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 21515)
+Completed 200 OK in 15ms (Views: 12.6ms | Allocations: 24092)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:48:50 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:48:50 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:48:50 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:48:50 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 19:49:33 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 21562)
+Completed 200 OK in 16ms (Views: 13.5ms | Allocations: 24068)
+
+
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:7:in `perform'
+Started GET "/cable" for ::1 at 2023-04-09 19:49:34 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:49:34 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:49:34 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:49:34 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:7:in `perform'
+[ActionCable] Broadcasting to NewsChannel: {#<Category id: 1, name: "business", created_at: "2023-04-09 16:16:09.297017000 +0000", updated_at: "2023-04-09 16:16:09.297017000 +0000">=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Mast...
+NewsChannel transmitting {"#<Category:0x00007f186c3a6b10>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+NewsChannel transmitting {"#<Category:0x00007f186c3a6b10>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:50:28 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:7:in `perform'
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 21520)
+Completed 200 OK in 16ms (Views: 13.5ms | Allocations: 24026)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 19:50:28 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:50:28 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:50:28 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:50:28 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {#<Category id: 1, name: "business", created_at: "2023-04-09 16:16:09.297017000 +0000", updated_at: "2023-04-09 16:16:09.297017000 +0000">=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Mast...
+NewsChannel transmitting {"#<Category:0x00007f18698b4790>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+NewsChannel transmitting {"#<Category:0x00007f18698b4790>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+Started GET "/newsStack/sidekiq/retries" for ::1 at 2023-04-09 19:51:32 +0300
+Started POST "/newsStack/sidekiq/retries/all/delete" for ::1 at 2023-04-09 19:51:34 +0300
+Started GET "/newsStack/sidekiq/retries" for ::1 at 2023-04-09 19:51:34 +0300
+Started GET "/newsStack/sidekiq/retries" for ::1 at 2023-04-09 19:51:36 +0300
+Started GET "/" for ::1 at 2023-04-09 19:51:43 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:7:in `perform'
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2567)
+Completed 200 OK in 9ms (Views: 6.7ms | Allocations: 3397)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:51:43 +0300
+NewsChannel stopped streaming from NewsChannel
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:51:43 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:51:43 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:51:43 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:51:44 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:51:44 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {#<Category id: 1, name: "business", created_at: "2023-04-09 16:16:09.297017000 +0000", updated_at: "2023-04-09 16:16:09.297017000 +0000">=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Mast...
+NewsChannel transmitting {"#<Category:0x00007f186aee9998>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+NewsChannel transmitting {"#<Category:0x00007f186aee9998>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:52:25 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:7:in `perform'
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 22491)
+Completed 200 OK in 23ms (Views: 22.2ms | Allocations: 23232)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:52:25 +0300
+NewsChannel stopped streaming from NewsChannel
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:52:25 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:52:25 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:52:25 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:52:25 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:52:25 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {#<Category id: 1, name: "business", created_at: "2023-04-09 16:16:09.297017000 +0000", updated_at: "2023-04-09 16:16:09.297017000 +0000">=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Mast...
+NewsChannel transmitting {"#<Category:0x00007f186c3c75e0>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+NewsChannel transmitting {"#<Category:0x00007f186c3c75e0>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:53:07 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:7:in `perform'
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 22399)
+Completed 200 OK in 19ms (Views: 17.9ms | Allocations: 23140)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:53:07 +0300
+NewsChannel stopped streaming from NewsChannel
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:53:07 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:53:07 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:53:07 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:53:08 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:53:08 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {#<Category id: 1, name: "business", created_at: "2023-04-09 16:16:09.297017000 +0000", updated_at: "2023-04-09 16:16:09.297017000 +0000">=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Mast...
+NewsChannel transmitting {"#<Category:0x00007f18699c7808>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+NewsChannel transmitting {"#<Category:0x00007f18699c7808>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:53:29 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:7:in `perform'
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 22337)
+Completed 200 OK in 39ms (Views: 36.5ms | Allocations: 23078)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:53:29 +0300
+NewsChannel stopped streaming from NewsChannel
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 19:53:29 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:53:29 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:53:29 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:53:30 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:53:30 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {#<Category id: 1, name: "business", created_at: "2023-04-09 16:16:09.297017000 +0000", updated_at: "2023-04-09 16:16:09.297017000 +0000">=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Mast...
+NewsChannel transmitting {"#<Category:0x00007f1869865230>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+NewsChannel transmitting {"#<Category:0x00007f1869865230>"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:54:35 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 21526)
+Completed 200 OK in 16ms (Views: 13.6ms | Allocations: 24101)
+
+
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:7:in `perform'
+Started GET "/cable" for ::1 at 2023-04-09 19:54:35 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:54:35 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:54:36 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:54:36 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"business"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon...
+NewsChannel transmitting {"business"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+NewsChannel transmitting {"business"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 19:55:39 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 21535)
+Completed 200 OK in 17ms (Views: 13.5ms | Allocations: 24110)
+
+
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:7:in `perform'
+Started GET "/cable" for ::1 at 2023-04-09 19:55:39 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:55:39 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 19:55:40 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 19:55:40 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+[ActionCable] Broadcasting to NewsChannel: {"business"=>{"status"=>"ok", "totalResults"=>67, "articles"=>[{"source"=>{"id"=>nil, "name"=>"Fox Business"}, "author"=>"Breck Dumas", "title"=>"Best places to buy a beach house in the U.S. ranked - Fox Business", "description"=>"Vacation rental management platform Vacasa has released the top de...
+NewsChannel transmitting {"business"=>{"status"=>"ok", "totalResults"=>67, "articles"=>[{"source"=>{"id"=>nil, "name"=>"Fox Business"}, "author"=>"Breck Dumas", "title"=>"Best places to buy a beach house in the U.S. ranked - Fox Business", "description"=>"Vacation rental management platform Vacasa has released the top de... (via streamed from NewsChannel)
+NewsChannel transmitting {"business"=>{"status"=>"ok", "totalResults"=>67, "articles"=>[{"source"=>{"id"=>nil, "name"=>"Fox Business"}, "author"=>"Breck Dumas", "title"=>"Best places to buy a beach house in the U.S. ranked - Fox Business", "description"=>"Vacation rental management platform Vacasa has released the top de... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 20:00:03 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 21530)
+Completed 200 OK in 15ms (Views: 12.6ms | Allocations: 24112)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 20:00:04 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:00:04 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:00:04 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:00:04 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:14:in `perform'
+[ActionCable] Broadcasting to NewsChannel: {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon...
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+Started GET "/" for ::1 at 2023-04-09 20:01:34 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 22755)
+Completed 200 OK in 39ms (Views: 36.3ms | Allocations: 23626)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:01:34 +0300
+NewsChannel stopped streaming from NewsChannel
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:01:34 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:01:34 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:01:34 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:01:35 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:01:35 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:14:in `perform'
+[ActionCable] Broadcasting to NewsChannel: {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon...
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:01:44 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 20:02:09 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 22342)
+Completed 200 OK in 35ms (Views: 33.0ms | Allocations: 23083)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:02:09 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:02:09 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:02:09 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:02:09 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:02:09 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:14:in `perform'
+[ActionCable] Broadcasting to NewsChannel: {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon...
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:02:19 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 20:04:38 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 22871)
+Completed 200 OK in 18ms (Views: 14.8ms | Allocations: 25455)
+
+
+Started GET "/cable" for ::1 at 2023-04-09 20:04:39 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:04:39 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:04:39 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:04:39 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:14:in `perform'
+[ActionCable] Broadcasting to NewsChannel: {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon...
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:04:49 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 20:05:33 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 22628)
+Completed 200 OK in 15ms (Views: 14.2ms | Allocations: 23496)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:05:33 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:05:33 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:05:33 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:05:33 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:05:33 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:14:in `perform'
+[ActionCable] Broadcasting to NewsChannel: {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon...
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:05:43 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/" for ::1 at 2023-04-09 20:05:43 +0300
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2453)
+Completed 200 OK in 3ms (Views: 2.6ms | Allocations: 3197)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:05:43 +0300
+NewsChannel stopped streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:05:43 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:05:43 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+Started GET "/cable" for ::1 at 2023-04-09 20:05:44 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2023-04-09 20:05:44 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+NewsChannel is transmitting the subscription confirmation
+NewsChannel is streaming from NewsChannel
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/sidekiq/load_news_job.rb:14:in `perform'
+[ActionCable] Broadcasting to NewsChannel: {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon...
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+NewsChannel transmitting {"top-news"=>{"status"=>"ok", "totalResults"=>37, "articles"=>[{"source"=>{"id"=>"associated-press", "name"=>"Associated Press"}, "author"=>"Dave Skretta", "title"=>"Masters resumes 2nd round after storms fell trees at Augusta - The Associated Press", "description"=>"AUGUSTA, Ga. (AP) — The secon... (via streamed from NewsChannel)
+Finished "/cable" [WebSocket] for ::1 at 2023-04-09 20:05:53 +0300
+NewsChannel stopped streaming from NewsChannel

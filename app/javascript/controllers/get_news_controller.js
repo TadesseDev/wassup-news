@@ -18,11 +18,9 @@ export default class extends Controller {
     };
     newsSocket.onmessage = function (event) {
       const response = JSON.parse(event.data);
-      const resultCount = response.message?.totalResults ?? false;
-
+      const resultCount = response.message?.["close-socket"] ?? false;
       if (resultCount) {
         const data = response.message.articles;
-        console.log(data, resultCount);
         newsSocket.close();
       }
     };

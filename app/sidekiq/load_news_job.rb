@@ -1,23 +1,33 @@
 class LoadNewsJob
   include Sidekiq::Job
-  Sidekiq.strict_args!(false)
-  def perform(url, news)
+
+  def perform(url, category)
+    data = {}
     response = HTTParty.get(url)
     if response.code == 200
       # todo: Optimize this line of code
-      sleep 1.seconds
-      p response.body
-      data = JSON.parse(response.body)
-      # news["health"] = data
-      p "success loading news"
-      ActionCable.server.broadcast("NewsChannel", data)
-      return data
-      # p response.body
+      data["top-news"] = JSON.parse(response.body)
     else
-      p "error loading news"
-      ActionCable.server.broadcast("NewsChannel", "Error: #{response.code}")
-      # p response.body
+      data["top-news"] = "Error: #{response.code}"
     end
-    # Do something
+    if category.nil?
+      Category.all.each do |category|
+        response = HTTParty.get(url + "&category=#{category.name}")
+        if response.code == 200
+          # todo: Optimize this line of code
+          data[category.name] = JSON.parse(response.body)
+        else
+          data[category.name] = "Error: #{response.code}"
+        end
+      end
+    end
+    data["close-socket"] = true
+    stream_to_channel(data)
+  end
+
+  private
+
+  def stream_to_channel(data)
+    ActionCable.server.broadcast("NewsChannel", data)
   end
 end
