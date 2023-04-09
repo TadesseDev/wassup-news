@@ -2,11 +2,14 @@ class LoadNewsJob
   include Sidekiq::Job
 
   def perform(url)
-    sidekiq_options_hash = false
     response = HTTParty.get(url)
     if response.code == 200
+      # todo: Optimize this line of code
+      sleep 1.seconds
+      p response.body
+      data = JSON.parse(response.body)
       p "success loading news"
-      ActionCable.server.broadcast("NewsChannel", response.body)
+      ActionCable.server.broadcast("NewsChannel", data)
       # p response.body
     else
       p "error loading news"

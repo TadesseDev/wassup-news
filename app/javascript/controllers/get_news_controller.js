@@ -17,8 +17,13 @@ export default class extends Controller {
       );
     };
     newsSocket.onmessage = function (event) {
-      console.log("Received data from news channel", event.data);
-      // newsSocket.close();
+      const response = JSON.parse(event.data);
+
+      if (response.message?.totalResults) {
+        const data = response.message.articles;
+        console.log(data);
+        newsSocket.close();
+      }
     };
     newsSocket.onerror = function (event) {};
     newsSocket.onclose = function (event) {};
