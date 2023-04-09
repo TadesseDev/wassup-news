@@ -1,5 +1,28 @@
 
 <div id="root" data-controller="get-news">
-    <h1>News#index</h1>
-    <p>Find me in app/views/news/index.html.erb</p>
+<%= render 'navbar' %>
+<div class="main-flow">
+    <header>
+    <h1>
+        <%=link_to root_path do%>
+        <span class="green">WAASUP</span>-TODAY
+    <%end%>
+    </h1>
+    <ul>
+    <% @categories.each do |category| %>
+    <li>
+        <%= link_to category.name, root_path %>
+    </li>
+    <% end %>
+    <li>
+        <%=form_with url: "root_path", id: "search-form", method: "post" do |form|%>
+        <%= form.text_field "serach", class: "search-text", placeholder: "Search here" %>
+           <%= form.button :submit,  class: "search" do %>
+                <i class="fa-solid fa-2x fa-magnifying-glass green"></i>
+        <%end%>
+        <%end%>
+    </li>
+</ul>
+    </header>
+</div>
 </div>

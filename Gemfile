@@ -78,3 +78,5 @@ gem "httparty", "~> 0.21.0"
 gem "rack-cors", "~> 2.0"
 
 gem "dotenv-rails", "~> 2.8"
+
+gem "font-awesome-sass", "~> 6.4"
