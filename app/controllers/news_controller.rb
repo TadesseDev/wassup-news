@@ -1,9 +1,9 @@
 class NewsController < ApplicationController
   def index
+    query_params = { apiKey: ENV["NEWS_API_KEY"], country: "us" }
     LoadNewsJob.perform_async(
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=49aee5edf0084e3f85deb45474c96721"
+      "https://newsapi.org/v2/top-headlines?#{query_params.to_query}"
     )
-
-    # ActionCable.server.broadcast("NewsChannel", "data loaded successfully")
+    console
   end
 end

@@ -76,3 +76,5 @@ gem "sidekiq", "~> 7.0"
 gem "httparty", "~> 0.21.0"
 
 gem "rack-cors", "~> 2.0"
+
+gem "dotenv-rails", "~> 2.8"

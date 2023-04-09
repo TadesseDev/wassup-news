@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="get-news"
 export default class extends Controller {
+  static targets = ["n"];
   connect() {
     console.log("Hello, Stimulus!");
     const newsSocket = new WebSocket("ws://localhost:4000/cable");
@@ -18,10 +18,11 @@ export default class extends Controller {
     };
     newsSocket.onmessage = function (event) {
       const response = JSON.parse(event.data);
+      const resultCount = response.message?.totalResults ?? false;
 
-      if (response.message?.totalResults) {
+      if (resultCount) {
         const data = response.message.articles;
-        console.log(data);
+        console.log(data, resultCount);
         newsSocket.close();
       }
     };
