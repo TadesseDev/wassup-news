@@ -1,7 +1,7 @@
 
-<div id="root" data-controller="get-news">
+<div id="root" data-controller="get-news" data-get-news-channel-id-value="<%= session.id %>">
 <%= render 'navbar' %>
-<div class="main-flow" data-controller="update"  data-update-channel-id-value="<%= @channel_id %>">
+<div class="main-flow" data-controller="update"  data-update-channel-id-value="<%= session.id %>">
     <header >
     <h1 data-search-target="results">
         <%=link_to root_path do%>
@@ -24,13 +24,31 @@
     </li>
 </ul>
     </header>
+<section id="countries">
+    <h2>find your country down</h2>
+    <div class="container">
+<% @countries.each do |country|%>
+<%= link_to country.name, root_path, class: "country" %>
 
-    <section class="general">
-        <h2 class"category">General - Articles</h2>
+<%end%>
+    </div>
+</section>
+<section id="general" class="article-container">
+        <h2 class="category">General - Articles</h2>
         <div class="articles">
 
-        <%= render  partial: 'news', collection: @news[:general][:articles]%>
         </div>
     </section>
+<% @categories.each do |category|%>
+    <section id=<%=category.name%> class="article-container">
+        <h2 class="category"><%=category.name%> - Articles</h2>
+        <div class="articles">
+            <% if @news[category.name] %>
+        <%= render  partial: 'news', collection: @news[category.name] %>
+            <% end %>
+
+        </div>
+    </section>
+    <% end %>
 </div>
 </div>

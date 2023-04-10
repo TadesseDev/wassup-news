@@ -81,7 +81,7 @@ nav {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   ul {
     display: flex;
@@ -108,8 +108,6 @@ header {
     outline: none;
     background-color: transparent;
   }
-  .search {
-  }
   .search-text {
     width: 0;
     transition: width 1s;
@@ -127,22 +125,121 @@ article.news {
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 5px var(--blur);
+  text-align: center;
+  color: var(--bright);
+  .container {
+    height: 96%;
+    width: 96%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    position: relative;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      180deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 0) 48%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    .about {
+      display: flex;
+      justify-content: space-around;
+      h4 {
+        margin: 0;
+      }
+    }
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .mirror {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffff38;
+    z-index: 0;
+    backdrop-filter: blur(10px);
+  }
   .overlay {
     position: absolute;
     height: 0;
     top: 100%;
+    left: 100%;
+    transition: left 1s;
+    transition: top 1s;
+    color: var(--bright);
+    min-width: 300px;
+    font-size: 1.2rem;
+    .content {
+      z-index: 1;
+      position: relative;
+      padding: 20px 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 10px var(--blur);
+      a {
+        background: var(--green);
+        padding: 10px 20px;
+        margin: 5px;
+        color: var(--bright);
+        border-radius: 5px;
+        box-shadow: 0 0 10px 5px var(--blur);
+      }
+    }
+    .mirror {
+      background: #05000077;
+    }
+  }
+  &:hover {
+    .overlay {
+      top: 50%;
+      left: 50%;
+      height: auto;
+      width: auto;
+      transform: translate(-50%, -50%);
+    }
   }
 }
-.general {
+
+#general,
+.article-container {
   .articles {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    justify-content: space-around;
+    grid-template-columns: 32% 32% 32%;
+    justify-content: space-between;
     grid-auto-rows: 300px;
     gap: 1%;
+
     article:first-child {
       grid-column: 1 / span 2;
       grid-row: 1 / span 2;
+    }
+    article:last-child {
+    }
+  }
+}
+
+.category {
+  font-size: 2rem;
+  font-family: "Archivo Black", sans-serif;
+  border-bottom: 3px solid var(--green);
+}
+
+#countries {
+  text-align: center;
+  .container {
+    display: flex;
+    overflow: scroll;
+    overflow-y: hidden;
+    a {
+      display: inline-block;
+      margin: 5px;
+      min-width: max-content;
     }
   }
 }

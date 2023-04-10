@@ -7,6 +7,9 @@ export default class extends Controller {
   };
   connect() {
     const chId = this.channelIdValue;
+
+    // If new user? set session/chanel id before further processing
+    if (!chId) window.location.reload();
     const updateSocket = new WebSocket("ws://localhost:4000/cable");
     updateSocket.onopen = function (event) {
       console.log("Connected to update channel");

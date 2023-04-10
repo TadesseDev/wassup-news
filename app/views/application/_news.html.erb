@@ -1,14 +1,24 @@
 <article style="background-image: url('<%= news[:urlToImage]%>')" class="news">
-    <h3 class="title" >
-    <%= news[:title]%>
-</h3>
-<h4 class="by"><%= news[:author]%></h4>
-<h5 class="by"><%= news[:source][:name]%></h5>
-<p class="published-at"><%= news[:publishedAt].split("T").join(" at ")%></p>
-<div class="overlay">
 
-<p class="published-at"><%= news[:description]%></p>
-<a href="<%= news[:url]%>">Read More</a>
-</div>
+        <div class="container">
+            <h3 class="title" >
+                <%= news[:title]%>
+            </h3>
+            <div class="bottom">
+                <div class="about">
+                    <h4 class="by"><span class="green">By : </span><%= news[:author]%></h4>
+                    <h4 class="by"><span class="green"> On: </span><%= news[:source][:name]%></h4>
+                </div>
+                <p class="published-at"><%= news[:publishedAt].split("T").join(" at ")%></p>
+            </div>
+            <div class="overlay">
+                <div class="mirror"></div>
+                <div class="content">
+
+                    <p class="published-at"><%= news[:description]%></p>
+                    <a href="<%= news[:url]%>" target="blanck">Read Full Article</a>
+                </div>
+            </div>
+        </div>
 </article>
 
