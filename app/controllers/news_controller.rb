@@ -8,9 +8,11 @@ class NewsController < ApplicationController
       q: @keyWord,
       category: @category
     }
+    # @channel_id=channel_id
     query_params.compact!
     url = "https://newsapi.org/v2/top-headlines?#{query_params.to_query}"
-    # LoadNewsJob.perform_async(url, query_params[:category])
-    # console
+    LoadNewsJob.perform_async(url, query_params[:category])
+    ActionCable.server.broadcast("UpdateChannel", { id: "#{@channel_id}" })
+    console
   end
 end

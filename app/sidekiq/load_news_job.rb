@@ -4,8 +4,6 @@ class LoadNewsJob
   # TODO: Optimize this function of code
   def perform(url, category)
     data = {}
-    response = HTTParty.get(url)
-    data["top-news"] = JSON.parse(response.body) if response.code == 200
 
     Category.all.each do |category|
       response = HTTParty.get(url + "&category=#{category.name}")
@@ -14,9 +12,10 @@ class LoadNewsJob
       else
         data[category.name] = "Error: #{response.code}"
       end
-    end if category.nil?
+    end
 
-    data["close-socket"] = true
+
+    data["all-done"] = true
     stream_to_channel(data)
   end
 

@@ -1,10 +1,10 @@
 
 <div id="root" data-controller="get-news">
 <%= render 'navbar' %>
-<div class="main-flow">
-    <header>
-    <h1>
-        <%=link_to root_path , data: {turbo: true} do%>
+<div class="main-flow" data-controller="update"  data-update-channel-id-value="<%= @channel_id %>">
+    <header >
+    <h1 data-search-target="results">
+        <%=link_to root_path do%>
         <span class="green">WAASUP</span>-TODAY
     <%end%>
     </h1>

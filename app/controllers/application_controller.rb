@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_queries
+  attr_reader :chanel_id
   def set_queries
     @categories = Category.all
     @countries = Country.all
@@ -8,6 +9,7 @@ class ApplicationController < ActionController::Base
     @keyWord = nil
     @page = 1
     @pageSize = 10
+    @channel_id=SecureRandom.uuid
     @news = {
       business: {
         status: "ok",
