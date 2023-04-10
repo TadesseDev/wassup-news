@@ -1,0 +1,14 @@
+<article style="background-image: url('<%= news[:urlToImage]%>')" class="news">
+    <h3 class="title" >
+    <%= news[:title]%>
+</h3>
+<h4 class="by"><%= news[:author]%></h4>
+<h5 class="by"><%= news[:source][:name]%></h5>
+<p class="published-at"><%= news[:publishedAt].split("T").join(" at ")%></p>
+<div class="overlay">
+
+<p class="published-at"><%= news[:description]%></p>
+<a href="<%= news[:url]%>">Read More</a>
+</div>
+</article>
+
