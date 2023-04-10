@@ -5,7 +5,7 @@ class LoadNewsJob
   def perform(url, category)
     data = {}
     response = HTTParty.get(url)
-    data["top-news"] = JSON.parse(response.body) if response.code == 200
+    data["general"] = JSON.parse(response.body) if response.code == 200
 
     Category.all.each do |category|
       response = HTTParty.get(url + "&category=#{category.name}")

@@ -1,9 +1,9 @@
 
 <div id="root" data-controller="get-news">
 <%= render 'navbar' %>
-<div class="main-flow">
-    <header>
-    <h1>
+<div class="main-flow" data-controller="update"  data-update-url-value="<%= session.id%>">
+    <header >
+    <h1 data-search-target="results">
         <%=link_to root_path do%>
         <span class="green">WAASUP</span>-TODAY
     <%end%>
