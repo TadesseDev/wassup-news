@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_queries
+  attr_reader :chanel_id
   def set_queries
     @categories = Category.all
     @countries = Country.all

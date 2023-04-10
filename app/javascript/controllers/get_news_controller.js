@@ -11,6 +11,7 @@ export default class extends Controller {
         JSON.stringify({
           command: "subscribe",
           identifier: JSON.stringify({
+            id: "Load initial news",
             channel: "NewsChannel",
           }),
         })
@@ -18,10 +19,11 @@ export default class extends Controller {
     };
     newsSocket.onmessage = function (event) {
       const response = JSON.parse(event.data);
-      const resultCount = response.message?.["all-done"] ?? false;
-      if (resultCount) {
+      const resultReady = response.message?.["all-done"] ?? false;
+      if (resultReady) {
         const data = response.message;
         console.log(data);
+        newsSocket.close();
       }
     };
     newsSocket.onerror = function (event) {};

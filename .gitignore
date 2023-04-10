@@ -1,1 +1,4 @@
+tmp/cache tmp/development_secret.txt tmp/pids tmp/restart.txt tmp/sockets
+tmp/cache tmp/development_secret.txt tmp/pids tmp/restart.txt tmp/sockets
+tmp/
 log/

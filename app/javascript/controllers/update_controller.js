@@ -14,6 +14,7 @@ export default class extends Controller {
         JSON.stringify({
           command: "subscribe",
           identifier: JSON.stringify({
+            id: "update-content-by user-request",
             channel: "UpdateChannel",
           }),
         })
@@ -21,7 +22,7 @@ export default class extends Controller {
     };
     updateSocket.onmessage = function (event) {
       const data = JSON.parse(event.data).message;
-      if (data.id && data.id == chId) {
+      if (data?.id && data.id == chId) {
         console.log("Message from update channel", data);
       }
     };
