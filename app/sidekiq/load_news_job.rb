@@ -16,7 +16,8 @@ class LoadNewsJob
       end
     end if category.nil?
 
-    data["close-socket"] = true
+     # this connection stay open to broadcast breaking news
+    data["all-done"] = true
     stream_to_channel(data)
   end
 

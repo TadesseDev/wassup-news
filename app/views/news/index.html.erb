@@ -1,7 +1,7 @@
 
 <div id="root" data-controller="get-news">
 <%= render 'navbar' %>
-<div class="main-flow" data-controller="update"  data-update-url-value="<%= session.id%>">
+<div class="main-flow" data-controller="update"  data-update-channel-id-value="<%= @channel_id %>">
     <header >
     <h1 data-search-target="results">
         <%=link_to root_path do%>

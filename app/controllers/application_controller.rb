@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     @keyWord = nil
     @page = 1
     @pageSize = 10
+    @channel_id=SecureRandom.uuid
     @news = {
       "top-news": {
         status: "ok",

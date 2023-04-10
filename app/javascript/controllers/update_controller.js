@@ -3,14 +3,29 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="update"
 export default class extends Controller {
   static values = {
-    url: String,
+    channelId: String,
   };
   connect() {
-    // const sessionId = document.cookie.get("_rails_session");
-    // const sessionId = document.cookie
-    //   .split("; ")
-    //   .find((row) => row.startsWith("_rails_session"))
-    //   .split("=")[1];
-    console.log("Hello from update controller!`", this.urlValue);
+    const chId = this.channelIdValue;
+    const updateSocket = new WebSocket("ws://localhost:4000/cable");
+    updateSocket.onopen = function (event) {
+      console.log("Connected to update channel");
+      updateSocket.send(
+        JSON.stringify({
+          command: "subscribe",
+          identifier: JSON.stringify({
+            channel: "UpdateChannel",
+          }),
+        })
+      );
+    };
+    updateSocket.onmessage = function (event) {
+      const data = JSON.parse(event.data).message;
+      if (data.id && data.id == chId) {
+        console.log("Message from update channel", data);
+      }
+    };
+
+    console.log("Hello from update controller!`", this.channelIdValue);
   }
 }

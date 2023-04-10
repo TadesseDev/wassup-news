@@ -1,6 +1,8 @@
 class UpdateChannel < ApplicationCable::Channel
+
+
   def subscribed
-    stream_from "UpdateChannel#{session.id}"
+   stream_from "UpdateChannel"
   end
 
   def unsubscribed
