@@ -11,7 +11,12 @@ export const render_category = (data, update = false) => {
     if (category != "general") page.value = 1;
   }
   articlesDOM.classList.add("articles");
-  if (articles.length > 0) {
+  if (!articles) {
+const div = document.createElement("div");
+div.textContent = "Fail to retrieve data";
+CategoryDOM.appendChild(div);
+  }
+  else if (articles.length > 0) {
     articles.forEach((article) => {
       const articleDOM = document.createElement("article");
       const container = document.createElement("div");
@@ -120,7 +125,7 @@ export const subscribe_to_initial_news = (chanelId) => {
     const completed = response.message?.["data"]?.["all-don"] ?? false;
     if (completed) {
       console.log("closing socket");
-      newsSocket.close();
+      // newsSocket.close();
     } else if (data && streamingId == chanelId) {
       console.log(data);
       render_category(data);
