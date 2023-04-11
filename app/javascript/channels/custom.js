@@ -1,9 +1,15 @@
-export const render_category = (data) => {
+export const render_category = (data, update = false) => {
   const category = Object.keys(data);
   const articles = Object.values(data)[0].articles;
   const CategoryDOM = document.getElementById(category);
   const articlesDOM = document.createElement("div");
-  Array.from(articlesDOM.getElementsByClassName("articles")).forEach(ele=> ele.remove());
+  const page = CategoryDOM.getElementsByClassName("page")[0];
+  if (!update) {
+    Array.from(articlesDOM.getElementsByClassName("articles")).forEach((ele) =>
+      ele.remove()
+    );
+    if (category != "general") page.value = 1;
+  }
   articlesDOM.classList.add("articles");
   if (articles.length > 0) {
     articles.forEach((article) => {
@@ -38,6 +44,7 @@ export const render_category = (data) => {
       articlesDOM.appendChild(articleDOM);
     });
     CategoryDOM.appendChild(articlesDOM);
+    if (category != "general") page.value = parseInt(page.value) + 1;
   } else {
     const div = document.createElement("div");
     div.textContent = "No news found";
@@ -50,6 +57,7 @@ export const render_search_result = (data) => {
   console.log(articles);
   const searchResultDOM = document.getElementById("search-results");
   const articlesDOM = searchResultDOM.getElementsByClassName("articles")[0];
+  searchResultDOM.style.display = "block";
   articlesDOM.innerHTML = ``;
   if (articles.length > 0) {
     articles.forEach((article) => {
@@ -142,8 +150,10 @@ export const subscribe_to_updates = (chanelId) => {
     const data = response.message?.data;
     const streamingId = response.message?.id;
     if (data && streamingId == chanelId) {
-      console.log(data.data);
-      render_search_result(data);
+      const search = data.search;
+      delete data.search;
+      if (search) render_search_result(data);
+      else render_category(data, true);
       console.log("Message from update channel", data);
     }
   };

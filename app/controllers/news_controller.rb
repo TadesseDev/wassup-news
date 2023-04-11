@@ -6,20 +6,20 @@ class NewsController < ApplicationController
     elsif request.format.json?
       render json: perform_sync
     end
-    console
   end
 
   def query_search
     if request.format.json?
       render json: perform_sync
     else
-      UpdateJob.perform_async(@url, "general", session.id.to_s)
+      UpdateJob.perform_async(@url, "general", session.id.to_s, true)
     end
   end
 
   def next_page
     # JSON requests can use the root path to load the next page by setting the page and category param
-    UpdateJob.perform_async(@url, @category, session.id.to_s)
+
+    UpdateJob.perform_async(@url, @category, session.id.to_s, false)
   end
   def channel_id
     render json: { id: session.id.to_s }
@@ -31,7 +31,7 @@ class NewsController < ApplicationController
     p "params are #{params}"
     @country_name = params[:country]
     @country = Country.find_by(name: @country_name).try(:code) || @country
-    @category = Country.find_by(name: params[:category]).try(:code) || @category
+    @category = params[:category] || @category
     @page = params[:page] || @category
     @pageSize = params[:pageSize] || @pageSize
     @keyWord = params[:query]

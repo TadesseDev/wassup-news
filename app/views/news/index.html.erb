@@ -16,8 +16,10 @@
     <% end %>
     <li>
         <%=form_with url: search_path, id: "search-form"  do |form|%>
-        <%= form.text_field "query", class: "search-text", placeholder: "Search here" %>
+     <div class="search-text">
+           <%= form.text_field "query", class: "", placeholder: "Search text..." %>
         <%= form.select "country", @countries.map{|country| country.name}.unshift(nil) %>
+     </div>
            <%= form.button :submit,  class: "search" do %>
                 <i class="fa-solid fa-2x fa-magnifying-glass green"></i>
         <%end%>
@@ -33,12 +35,15 @@
     <div class="articles">
 
     </div>
-    <a data-action="get-news#reseatSearch"> <i class="fa-solid fa-rotate-right fa-2x"></i><p>reset</p></a>
+    <a data-action="get-news#reseatSearch" class="reset-search circle-btn" >
+        <div class="mirror"></div>
+        <i class="fa-solid fa-rotate-right fa-2x"></i><p>Reset</p></a>
 </div>
 
 
 <section id="countries">
-    <h2>find your country down</h2>
+    <h2>find your country here</h2>
+    <input type="text" id="filter-country" data-action="get-news#filterCountry"  placeholder="Filter...">
     <div class="container">
 <% @countries.each do |country|%>
 <%= link_to country.name, root_path(country: country.name),data: {turbo: false}, class: "country"%>
@@ -58,9 +63,11 @@
     <section id=<%=category.name%> class="article-container">
         <h2 class="category"><%=category.name%> - Articles</h2>
         <%= form_with url: next_page_path do |form|%>
-                <%= form.hidden_field :page, value: 0 %>
-                <%= form.button :submit, class: "page" do%>
-                        <i class="fa-solid fa-forward  fa-2x"></i><p>Next</p>
+                <%= form.hidden_field :page, value: 1, class: "page"%>
+                <%= form.hidden_field :category, value: category.name %>
+                <%= form.hidden_field :country, value: @country_name %>
+                <%= form.button :submit, class: "circle-btn " do%>
+                        <p>More</p><i class="fa-solid fa-anchor"></i>
                 <% end %>
 
         <%end%>
