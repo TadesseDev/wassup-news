@@ -31,6 +31,8 @@ class NewsController < ApplicationController
     @page = params[:page] || @category
     @pageSize = params[:pageSize] || @pageSize
     @keyWord = params[:query]
+
+    @country = "us" if (@keyWord.nil? && @country.nil?)
     @query_params = {
       apiKey: @apiKey,
       country: @country, # this is a required field in the query params

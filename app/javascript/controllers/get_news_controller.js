@@ -11,5 +11,12 @@ export default class extends Controller {
         subscribe_to_initial_news(data.id);
       });
     });
+    console.log("reset button is", this.resetSearchTarget);
+  }
+
+  reseatSearch() {
+    // reset the search container
+    // TODO: Implement functionality
+    console.log("Implement me in the get_news_controller.js");
   }
 }

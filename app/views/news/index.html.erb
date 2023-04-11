@@ -33,6 +33,7 @@
     <div class="articles">
 
     </div>
+    <a data-action="get-news#reseatSearch"> <i class="fa-solid fa-rotate-right fa-2x"></i><p>reset</p></a>
 </div>
 
 
@@ -53,6 +54,7 @@
         </div>
     </section>
 <% @categories.each do |category|%>
+<%# TODO: update loader till the data is ready %>
     <section id=<%=category.name%> class="article-container">
         <h2 class="category"><%=category.name%> - Articles</h2>
         <div class="articles">

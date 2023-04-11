@@ -3,6 +3,7 @@ export const render_category = (data) => {
   const articles = Object.values(data)[0].articles;
   const CategoryDOM = document.getElementById(category);
   const articlesDOM = document.createElement("div");
+  Array.from(articlesDOM.getElementsByClassName("articles")).forEach(ele=> ele.remove());
   articlesDOM.classList.add("articles");
   if (articles.length > 0) {
     articles.forEach((article) => {
@@ -82,6 +83,10 @@ export const render_search_result = (data) => {
       articleDOM.appendChild(container);
       articlesDOM.appendChild(articleDOM);
     });
+  } else {
+    const div = document.createElement("div");
+    div.textContent = "No news found";
+    articlesDOM.appendChild(div);
   }
 };
 
