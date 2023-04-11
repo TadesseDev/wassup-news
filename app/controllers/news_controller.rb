@@ -6,7 +6,6 @@ class NewsController < ApplicationController
     elsif request.format.json?
       render json: perform_sync
     end
-
     console
   end
 
@@ -16,6 +15,10 @@ class NewsController < ApplicationController
     else
       UpdateJob.perform_async(@url, @category, session.id.to_s)
     end
+  end
+
+  def channel_id
+    render json: { id: session.id.to_s }
   end
 
   private

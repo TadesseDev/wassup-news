@@ -2,14 +2,17 @@ export const render_category = (data) => {
   const category = Object.keys(data);
   const articles = Object.values(data)[0].articles;
   const CategoryDOM = document.getElementById(category);
+  // console.log(CategoryDOM.getElementsByClassName("articles"));
+  // CategoryDOM.getElementsByClassName("articles").remove();
   const articlesDOM = document.createElement("div");
   articlesDOM.classList.add("articles");
-  articles.forEach((article) => {
-    const articleDOM = document.createElement("article");
-    const container = document.createElement("div");
-    articleDOM.classList.add("news");
-    container.classList.add("container");
-    container.innerHTML = `
+  if (articles.length > 0) {
+    articles.forEach((article) => {
+      const articleDOM = document.createElement("article");
+      const container = document.createElement("div");
+      articleDOM.classList.add("news");
+      container.classList.add("container");
+      container.innerHTML = `
               <h3 class="title" >
     ${article.title}
 </h3>
@@ -28,9 +31,51 @@ export const render_category = (data) => {
 <a href="${article.url}" target="blanck">Read Full Article</a>
     </div>
 </div>`;
-    articleDOM.style.backgroundImage = `url(${article.urlToImage})`;
-    articleDOM.appendChild(container);
-    articlesDOM.appendChild(articleDOM);
-  });
-  CategoryDOM.appendChild(articlesDOM);
+      articleDOM.style.backgroundImage = `url(${
+        article.urlToImage ||
+        "https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg"
+      })`;
+      articleDOM.appendChild(container);
+      articlesDOM.appendChild(articleDOM);
+      console.log(article.urlToImage || "");
+    });
+    CategoryDOM.appendChild(articlesDOM);
+  } else {
+    const div = document.createElement("div");
+    div.textContent = "No news found";
+    CategoryDOM.appendChild(div);
+  }
+};
+
+export const subscribe_to_initial_news = (chanelId) => {
+  console.log("subscribing");
+  const newsSocket = new WebSocket("ws://localhost:4000/cable");
+  newsSocket.onopen = function (event) {
+    console.log("Connected to news channel");
+    newsSocket.send(
+      JSON.stringify({
+        command: "subscribe",
+        identifier: JSON.stringify({
+          id: "Load initial news",
+          channel: "NewsChannel",
+        }),
+      })
+    );
+  };
+  newsSocket.onmessage = function (event) {
+    const response = JSON.parse(event.data);
+    const data = response.message?.data;
+    const streamingId = response.message?.id;
+    const completed = response.message?.["data"]?.["all-don"] ?? false;
+    if (completed) {
+      console.log("closing socket");
+      // newsSocket.close();
+    } else if (data && streamingId == chanelId) {
+      console.log(data);
+      render_category(data);
+      // data is ready to be rendered
+    }
+  };
+  newsSocket.onerror = function (event) {};
+  newsSocket.onclose = function (event) {};
 };

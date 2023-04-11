@@ -10,7 +10,6 @@ Category.create!(
   [
     { name: "business" },
     { name: "entertainment" },
-    { name: "general" },
     { name: "health" },
     { name: "science" },
     { name: "sports" },

@@ -30,7 +30,7 @@
     <h2>find your country down</h2>
     <div class="container">
 <% @countries.each do |country|%>
-<%= link_to country.name, root_path(country: country.name), class: "country"%>
+<%= link_to country.name, root_path(country: country.name),data: {turbo: false}, class: "country"%>
 
 <%end%>
     </div>
