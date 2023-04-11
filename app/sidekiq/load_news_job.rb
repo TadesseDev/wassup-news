@@ -1,6 +1,6 @@
 class LoadNewsJob
   include Sidekiq::Job
-
+  sidekiq_options retry: 2
   # TODO: Optimize this function of code
   def perform(url, category, channel_id)
     data = {}

@@ -1,24 +1,22 @@
 class NewsController < ApplicationController
   before_action :set_params
   def index
-    respond_to do |format|
-      format.html do |html|
-        LoadNewsJob.perform_async(
-          @url,
-          @query_params[:category],
-          session.id.to_s
-        )
-        render :index
-      end
+    if request.format.html?
+      LoadNewsJob.perform_async(@url, @query_params[:category], session.id.to_s)
+    elsif request.format.json?
       format.json { render json: perform_sync }
     end
+
     # ActionCable.server.broadcast("UpdateChannel", { id: "#{session.id}" })
     console
   end
 
   def query_search
-    p @query_params
-    return
+    if request.format.html?
+      # LoadNewsJob.perform_async(@url, @query_params[:category], session.id.to_s)
+    elsif request.format.json?
+      format.json { render json: perform_sync }
+    end
   end
 
   private

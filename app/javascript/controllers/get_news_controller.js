@@ -27,14 +27,13 @@ export default class extends Controller {
       const data = response.message?.data;
       const streamingId = response.message?.id;
       const completed = response.message?.["data"]?.["all-don"] ?? false;
-      if (data && streamingId == chanelId) {
-        console.log(data);
-        // render_category(data);
-        // data is ready to be rendered
-      }
       if (completed) {
         console.log("closing socket");
         newsSocket.close();
+      } else if (data && streamingId == chanelId) {
+        // console.log(data);
+        render_category(data);
+        // data is ready to be rendered
       }
     };
     newsSocket.onerror = function (event) {};
