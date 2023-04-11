@@ -13,7 +13,7 @@ class NewsController < ApplicationController
     if request.format.json?
       render json: perform_sync
     else
-      UpdateJob.perform_async(@url, @category, session.id.to_s)
+      UpdateJob.perform_async(@url, "general", session.id.to_s)
     end
   end
 
@@ -33,12 +33,13 @@ class NewsController < ApplicationController
     @keyWord = params[:query]
     @query_params = {
       apiKey: @apiKey,
-      country: @country || "us", # this is a required field in the query params
+      country: @country, # this is a required field in the query params
       page: @page,
       pageSize: @pageSize,
       q: @keyWord,
       category: @category
     }
+    @country = "us" if (@keyWord.nil? && @country.nil?)
     @query_params.compact!
     @url = "https://newsapi.org/v2/top-headlines?#{@query_params.to_query}"
     p "URL is : #{@url} "

@@ -17,7 +17,7 @@
     <li>
         <%=form_with url: search_path, id: "search-form"  do |form|%>
         <%= form.text_field "query", class: "search-text", placeholder: "Search here" %>
-        <%= form.hidden_field "country", value: @country_name %>
+        <%= form.select "country", @countries.map{|country| country.name}.unshift(nil) %>
            <%= form.button :submit,  class: "search" do %>
                 <i class="fa-solid fa-2x fa-magnifying-glass green"></i>
         <%end%>
@@ -26,6 +26,16 @@
 
 </ul>
     </header>
+
+
+<div id="search-results">
+    <h2>Search results</h2>
+    <div class="articles">
+
+    </div>
+</div>
+
+
 <section id="countries">
     <h2>find your country down</h2>
     <div class="container">
@@ -35,6 +45,7 @@
 <%end%>
     </div>
 </section>
+
 <section id="general" class="article-container">
         <h2 class="category">General - Articles</h2>
         <div class="articles">
