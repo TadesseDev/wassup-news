@@ -57,12 +57,15 @@
 <%# TODO: update loader till the data is ready %>
     <section id=<%=category.name%> class="article-container">
         <h2 class="category"><%=category.name%> - Articles</h2>
-        <div class="articles">
-            <% if @news[category.name] %>
-        <%= render  partial: 'news', collection: @news[category.name] %>
-            <% end %>
+        <%= form_with url: next_page_path do |form|%>
+                <%= form.hidden_field :page, value: 0 %>
+                <%= form.button :submit, class: "page" do%>
+                        <i class="fa-solid fa-forward  fa-2x"></i><p>Next</p>
+                <% end %>
 
-        </div>
+        <%end%>
+
+
     </section>
     <% end %>
 </div>

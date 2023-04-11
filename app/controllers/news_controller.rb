@@ -17,6 +17,10 @@ class NewsController < ApplicationController
     end
   end
 
+  def next_page
+    # JSON requests can use the root path to load the next page by setting the page and category param
+    UpdateJob.perform_async(@url, @category, session.id.to_s)
+  end
   def channel_id
     render json: { id: session.id.to_s }
   end
@@ -41,7 +45,7 @@ class NewsController < ApplicationController
       q: @keyWord,
       category: @category
     }
-    @country = "us" if (@keyWord.nil? && @country.nil?)
+
     @query_params.compact!
     @url = "https://newsapi.org/v2/top-headlines?#{@query_params.to_query}"
     p "URL is : #{@url} "
