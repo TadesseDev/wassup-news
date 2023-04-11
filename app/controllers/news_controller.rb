@@ -2,20 +2,19 @@ class NewsController < ApplicationController
   before_action :set_params
   def index
     if request.format.html?
-      LoadNewsJob.perform_async(@url, @query_params[:category], session.id.to_s)
+      LoadNewsJob.perform_async(@url, @category, session.id.to_s)
     elsif request.format.json?
-      format.json { render json: perform_sync }
+      render json: perform_sync
     end
 
-    # ActionCable.server.broadcast("UpdateChannel", { id: "#{session.id}" })
     console
   end
 
   def query_search
-    if request.format.html?
-      # LoadNewsJob.perform_async(@url, @query_params[:category], session.id.to_s)
-    elsif request.format.json?
-      format.json { render json: perform_sync }
+    if request.format.json?
+      render json: perform_sync
+    else
+      UpdateJob.perform_async(@url, @category, session.id.to_s)
     end
   end
 
@@ -25,9 +24,12 @@ class NewsController < ApplicationController
     p "params are #{params}"
     @country_name = params[:country]
     @country = Country.find_by(name: @country_name).try(:code) || @country
+    @category = Country.find_by(name: params[:category]).try(:code) || @category
+    @page = params[:page] || @category
+    @pageSize = params[:pageSize] || @pageSize
     @keyWord = params[:query]
     @query_params = {
-      apiKey: ENV["NEWS_API_KEY"],
+      apiKey: @apiKey,
       country: @country || "us", # this is a required field in the query params
       page: @page,
       pageSize: @pageSize,
@@ -39,13 +41,13 @@ class NewsController < ApplicationController
     p "URL is : #{@url} "
   end
 
-  def perform_sync()
+  def perform_sync
     data = {}
     if @category.nil?
-      response = HTTParty.get(url + "&category=general")
+      response = HTTParty.get(@url + "&category=general")
       data["general"] = JSON.parse(response.body)
       Category.all.each do |category|
-        response = HTTParty.get(url + "&category=#{category.name}")
+        response = HTTParty.get(@url + "&category=#{category.name}")
         if response.code == 200
           data[category.name] = JSON.parse(response.body)
         else
@@ -53,7 +55,7 @@ class NewsController < ApplicationController
         end
       end
     else
-      response = HTTParty.get(url + "&category=#{@category}")
+      response = HTTParty.get(@url + "&category=#{@category}")
       if response.code == 200
         data[@category] = JSON.parse(response.body)
       else

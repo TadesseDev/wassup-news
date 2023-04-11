@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :set_queries
 
   def set_queries
+    @apiKey = ENV["NEWS_API_KEY"]
     @categories = Category.all
     @countries = Country.all
     @category = nil
