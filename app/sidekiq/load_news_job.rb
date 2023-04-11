@@ -4,7 +4,7 @@ class LoadNewsJob
   # TODO: Optimize this function of code
   def perform(url, category, channel_id)
     data = {}
-
+    p "the data is fetched from #{url}"
     response = HTTParty.get(url + "&category=general")
     stream_to_channel(channel_id, { "general" => JSON.parse(response.body) })
     Category.all.each do |category|

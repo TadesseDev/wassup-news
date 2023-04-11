@@ -28,7 +28,8 @@ export default class extends Controller {
       const streamingId = response.message?.id;
       const completed = response.message?.["data"]?.["all-don"] ?? false;
       if (data && streamingId == chanelId) {
-        render_category(data);
+        console.log(data);
+        // render_category(data);
         // data is ready to be rendered
       }
       if (completed) {
