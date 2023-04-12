@@ -2,6 +2,7 @@ class NewsController < ApplicationController
   before_action :set_params
   def index
     render json: perform_sync if request.format.json?
+    @new_subscription = Subscription.new
   end
 
   def query_search
@@ -22,7 +23,7 @@ class NewsController < ApplicationController
   end
 
   def subscribe_to_news_stream
-    LoadNewsJob.perform_async(@url, @category, session.id.to_s)
+    # LoadNewsJob.perform_async(@url, @category, session.id.to_s)
   end
 
   private
