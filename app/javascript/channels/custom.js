@@ -4,25 +4,32 @@ export const render_category = (data, update = false) => {
   const CategoryDOM = document.getElementById(category);
   const articlesDOM = document.createElement("div");
   const page = CategoryDOM.getElementsByClassName("page")[0];
+
   if (!update) {
-    Array.from(articlesDOM.getElementsByClassName("articles")).forEach((ele) =>
+    Array.from(CategoryDOM.getElementsByClassName("articles")).forEach((ele) =>
       ele.remove()
     );
     if (category != "general") page.value = 1;
   }
   articlesDOM.classList.add("articles");
-  if (!articles) {
-const div = document.createElement("div");
-div.textContent = "Fail to retrieve data";
-CategoryDOM.appendChild(div);
+  console.log(articles, articles?.length);
+  if (!articles || articles?.length < 1) {
+    const div = document.createElement("div");
+    div.classList.add("articles");
+    div.classList.add("error");
+    div.innerHTML = articles
+      ? `<h4> No news found </h4> <p> Please update your filters`
+      : `<h4>Fail to retrieve data</h4><p> Its most likely the server runs out of API limit, Please communicate the admin to reset the API key</p>`;
+    CategoryDOM.appendChild(div);
+    return;
   }
-  else if (articles.length > 0) {
-    articles.forEach((article) => {
-      const articleDOM = document.createElement("article");
-      const container = document.createElement("div");
-      articleDOM.classList.add("news");
-      container.classList.add("container");
-      container.innerHTML = `
+
+  articles.forEach((article) => {
+    const articleDOM = document.createElement("article");
+    const container = document.createElement("div");
+    articleDOM.classList.add("news");
+    container.classList.add("container");
+    container.innerHTML = `
               <h3 class="title" >
     ${article.title}
 </h3>
@@ -41,20 +48,15 @@ CategoryDOM.appendChild(div);
 <a href="${article.url}" target="blanck">Read Full Article</a>
     </div>
 </div>`;
-      articleDOM.style.backgroundImage = `url(${
-        article.urlToImage ||
-        "https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg"
-      })`;
-      articleDOM.appendChild(container);
-      articlesDOM.appendChild(articleDOM);
-    });
-    CategoryDOM.appendChild(articlesDOM);
-    if (category != "general") page.value = parseInt(page.value) + 1;
-  } else {
-    const div = document.createElement("div");
-    div.textContent = "No news found";
-    CategoryDOM.appendChild(div);
-  }
+    articleDOM.style.backgroundImage = `url(${
+      article.urlToImage ||
+      "https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg"
+    })`;
+    articleDOM.appendChild(container);
+    articlesDOM.appendChild(articleDOM);
+  });
+  CategoryDOM.appendChild(articlesDOM);
+  if (category != "general") page.value = parseInt(page.value) + 1;
 };
 
 export const render_search_result = (data) => {

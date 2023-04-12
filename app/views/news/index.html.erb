@@ -46,7 +46,7 @@
     <input type="text" id="filter-country" data-action="get-news#filterCountry"  placeholder="Filter...">
     <div class="container">
 <% @countries.each do |country|%>
-<%= link_to country.name, root_path(country: country.name),data: {turbo: false}, class: "country"%>
+<%= button_to country.name, subscribe_to_news_stream_path(country: country.name), data: {turbo: true},  class: "country"%>
 
 <%end%>
     </div>

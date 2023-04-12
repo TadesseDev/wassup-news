@@ -9,6 +9,10 @@ export default class extends Controller {
       response.json().then((data) => {
         console.log(data);
         subscribe_to_initial_news(data.id);
+        fetch("http://localhost:4000/subscribe-to-news-stream").catch((err) => {
+          console.log(err);
+          // TODO: let the user know they are not subscribed
+        });
       });
     });
     console.log("reset button is", this.resetSearchTarget);
@@ -34,14 +38,15 @@ export default class extends Controller {
     const container =
       event.target.parentElement.getElementsByClassName("container")[0];
     console.log(container);
-    const anchors = Array.from(container.getElementsByTagName("a"));
+    const anchors = Array.from(container.getElementsByTagName("button"));
 
     const regex = new RegExp(`${country}`, "i");
-    anchors
-      .filter((anchor) => !anchor.textContent.match(regex))
-      .forEach((anchor) => (anchor.style.display = "none"));
-    anchors
-      .filter((anchor) => anchor.textContent.match(regex))
-      .forEach((anchor) => (anchor.style.display = "block"));
+    anchors.map((anchor) => {
+      if (anchor.innerText.match(regex)) {
+        anchor.style.display = "block";
+      } else {
+        anchor.style.display = "none";
+      }
+    });
   }
 }
