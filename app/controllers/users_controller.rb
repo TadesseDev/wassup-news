@@ -23,9 +23,30 @@ class UsersController < ApplicationController
       )
 
     if subscription.save!
-      p "returning turbo stream"
+      notification = {
+        title: "Subscription created",
+        message: "We will keep you updated  #{frequency}",
+        type: "success"
+      }
+    else # subscription fails
+      notification = {
+        title: "Fail to create subscription",
+        message: "Please try again",
+        type: "error"
+      }
+    end
+
+    if request.format.turbo_stream?
+      render turbo_stream:
+               turbo_stream.append(
+                 "subscription-notification",
+                 partial: "notification",
+                 locals: {
+                   notification: notification
+                 }
+               )
     else
-      p "returning error"
+      render json: notification, status: :ok if request.format.json?
     end
   end
 

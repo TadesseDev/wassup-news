@@ -7,7 +7,7 @@ class NewsController < ApplicationController
 
   def query_search
     if request.format.json?
-      render json: perform_sync
+      render json: perform_sync, status: :ok
     else
       UpdateJob.perform_async(@url, "general", session.id.to_s, true)
     end
