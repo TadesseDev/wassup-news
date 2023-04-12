@@ -49,4 +49,17 @@ export default class extends Controller {
       }
     });
   }
+
+  removeParent(event) {
+    event.target.closest(".parent").remove();
+  }
+  hideParent(event) {
+    console.log(event.target.closest(".parent"));
+    event.target.closest(".parent").style.display = "none";
+  }
+
+  showRegistrationForm() {
+    document.getElementById("header-subscription-form").style.display = "flex";
+    document.getElementsByTagName("header").style.height = "max-content";
+  }
 }

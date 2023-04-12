@@ -25,18 +25,28 @@
     </li>
 </ul>
 </div>
-<button>Subride to news, Let up keep you updated</button>
 <div class="subscription-form">
-     <%= form_with model: @new_subscription, url: subscribe_path do |form|%>
+
+<button  data-action="get-news#showRegistrationForm" class="flat-icon">Subride to news, Let up keep you updated<i class="fa-solid fa-anchor"></i></button>
+     <%= form_with model: @new_subscription, url: subscribe_path, id: "header-subscription-form", class: "parent" do |form|%>
+
     <%= form.text_field :name, placeholder: "name", required: true %>
     <%= form.email_field :email, placeholder: "email", required: true %>
     <%= form.text_field :keyword, placeholder: "keyword" %>
     <%= form.select :country, @countries.map{|country| country.name}.unshift("World Wide") %>
     <%= form.select :category, @categories.map{|category| category.name}.unshift("ALL") %>
     <%= form.select :frequency, ["hourly", "daily", "weekly", "monthly"] %>
-    <%= form.submit "Subscribe" %>
+<div>
+     <%= form.button :submit, class: "Subscribe" do%>
+                        <i class="fa-solid fa-anchor"></i><span>subscribe</span>
+                <% end %>
+
+    <%= form.button :reset, type: "reset", class: "cancel", "data-action": "get-news#hideParent" do%>
+                         <i class="fa-solid fa-x"></i><span>Done</span>
+                <% end %>
     <%end%>
-    <div id="subscription-notification">
+</div>
+    <div id="subscription-notification" class="notification">
     </div>
 </div>
 

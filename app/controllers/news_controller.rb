@@ -23,7 +23,7 @@ class NewsController < ApplicationController
   end
 
   def subscribe_to_news_stream
-    # LoadNewsJob.perform_async(@url, @category, session.id.to_s)
+    LoadNewsJob.perform_async(@url, @category, session.id.to_s)
   end
 
   private

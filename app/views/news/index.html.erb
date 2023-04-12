@@ -21,8 +21,7 @@
     <input type="text" id="filter-country" data-action="get-news#filterCountry"  placeholder="Filter...">
     <div class="container">
 <% @countries.each do |country|%>
-<%= button_to country.name, subscribe_to_news_stream_path(country: country.name), data: {turbo: true},  class: "country"%>
-
+    <%= button_to country.name, subscribe_to_news_stream_path(country: country.name), data: {turbo: true},  class: "country"%>
 <%end%>
     </div>
 </section>
@@ -44,11 +43,9 @@
                 <%= form.button :submit, class: "circle-btn " do%>
                         <p>More</p><i class="fa-solid fa-anchor"></i>
                 <% end %>
-
         <%end%>
-
-
     </section>
     <% end %>
 </div>
 </div>
+<%= render 'footer' %>

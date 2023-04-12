@@ -11,6 +11,8 @@ class UsersController < ApplicationController
         :email,
         :name
       )
+    country = "" if country == "World Wide"
+    category = "" if category == "ALL"
     user = User.find_by(email: email) || User.create(name: name, email: email)
 
     subscription =

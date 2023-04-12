@@ -34,6 +34,10 @@ h1 {
   font-family: "Archivo Black", sans-serif;
 }
 
+i {
+  margin: 5px;
+}
+
 a {
   text-decoration: none;
   color: var(--dark);
@@ -87,6 +91,8 @@ header {
   z-index: 3;
   position: sticky;
   top: 0;
+  padding: 20px;
+  padding-top: 0;
   .top {
     width: 80vw;
     display: flex;
@@ -118,6 +124,13 @@ header {
   }
 }
 
+.flat-icon {
+  border: none;
+  padding: 5px;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--green);
+}
 #search-form {
   display: flex;
   padding: 10px;
@@ -243,6 +256,7 @@ article.news {
     justify-content: space-between;
     grid-auto-rows: 300px;
     gap: 1%;
+    margin: 100px 0;
     article:first-child {
       grid-column: 1 / span 2;
       grid-row: 1 / span 2;
@@ -263,6 +277,7 @@ article.news {
   color: var(--blur);
   text-align: center;
   margin: 30px 0;
+  margin: 100px 0;
 }
 
 #countries {
@@ -355,4 +370,62 @@ article.news {
     margin: 10px;
     height: 352px;
   }
+}
+
+.subscription-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: max-content;
+  margin-right: 10vw;
+  margin-left: auto;
+  form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input,
+    button,
+    select {
+      display: block;
+      margin: auto;
+      width: 100%;
+      font-size: 1.3rem;
+      margin: 5px;
+      padding: 10px;
+      border: 1px solid var(--green);
+      background: white;
+      outline: none;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px;
+      width: max-content;
+      margin: auto;
+      display: inline-block;
+      &:hover {
+        background: var(--green);
+        color: var(--bright);
+      }
+    }
+  }
+}
+
+.notification {
+  font-weight: bold;
+  .success {
+    color: var(--green);
+    text-align: center;
+  }
+  .error {
+    color: red;
+  }
+  button {
+    padding: 10px 30px;
+  }
+}
+
+#header-subscription-form {
+  display: none;
 }

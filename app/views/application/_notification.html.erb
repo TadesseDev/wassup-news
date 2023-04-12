@@ -1,7 +1,7 @@
-<div class="<%notification[:type]%>">
+<div class="<%= notification[:type]%> parent" >
     <h4><%= notification[:title]%></h4>
 <p><%= notification[:message]%></p>
-<button class="remove-parentt">
-    <i class="fa-solid fa-trash"></i>
+<button class="remove-parent" data-action="get-news#removeParent">
+    <i class="fa-solid fa-trash  fa-2x"></i>
 </button>
 </div>
