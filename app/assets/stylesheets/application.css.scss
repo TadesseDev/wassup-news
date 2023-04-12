@@ -22,6 +22,8 @@
   --bright: #f5f6fa;
   --green: green;
 }
+
+/* reset and basic classes */
 html,
 body {
   padding: 0;
@@ -42,8 +44,19 @@ a {
   text-decoration: none;
   color: var(--dark);
 }
+
+.green {
+  color: green;
+}
 ul {
   list-style: none;
+}
+.blur {
+  color: var(--blur);
+}
+
+.text-center{
+  text-align: center;
 }
 .main-flow {
   width: 80vw;
@@ -51,9 +64,6 @@ ul {
   min-width: #{"min(100vw , 800px)"};
   max-width: 1400px;
   z-index: 1;
-}
-.green {
-  color: green;
 }
 
 nav {
@@ -457,9 +467,13 @@ footer {
       }
     }
     a {
-      color: lime;
+      color: #75a998;
       font-weight: bold;
       font-size: 1.2rem;
+      &:hover{
+
+      color: #10bb82;
+      }
     }
   }
 }
