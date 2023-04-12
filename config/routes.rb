@@ -1,5 +1,7 @@
 require "sidekiq/web"
 Rails.application.routes.draw do
+  get 'user/register'
+  get 'user/subscribe'
   root "news#index"
   post "search", to: "news#query_search"
   post "next-page", to: "news#next_page"
