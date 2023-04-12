@@ -46,6 +46,7 @@ ul {
   margin: auto;
   min-width: #{"min(100vw , 800px)"};
   max-width: 1400px;
+  z-index: 1;
 }
 .green {
   color: green;
@@ -80,9 +81,20 @@ nav {
 }
 
 header {
+  padding: 10vw, 0;
+  margin: auto;
+  min-width: #{"min(100vw , 800px)"};
+  max-width: 1400px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  h1,
+  ul {
+    z-index: 2;
+  }
   ul {
     display: flex;
     align-items: center;
