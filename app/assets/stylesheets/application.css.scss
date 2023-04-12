@@ -91,7 +91,7 @@ header {
   z-index: 3;
   position: sticky;
   top: 0;
-  padding: 20px;
+  padding: 20px 0;
   padding-top: 0;
   .top {
     width: 80vw;
@@ -428,4 +428,38 @@ article.news {
 
 #header-subscription-form {
   display: none;
+}
+footer {
+  background: #0808089e;
+  color: var(--bright);
+  > * {
+    width: 80vw;
+    margin: auto;
+    min-width: #{"min(100vw , 800px)"};
+    max-width: 1400px;
+  }
+  .main-container {
+    display: grid;
+    grid-template-columns: 30% 60%;
+    li {
+      border-bottom: 3px solid var(--green);
+    }
+  }
+
+  .footer-nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 20px;
+    > li {
+      label {
+        display: block;
+      }
+    }
+    a {
+      color: lime;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  }
 }

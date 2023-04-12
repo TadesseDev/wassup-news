@@ -1,53 +1,72 @@
-  <!-- Site footer -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
-          </div>
+<footer>
+ <div class="main-container">
+   <div class="about">
+    <h4>Who we are</h4>
 
-          <div class="col-xs-6 col-md-3">
-            <h6>Categories</h6>
-            <ul class="footer-links">
-              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
-            </ul>
-          </div>
+    <ul>
+      <li>
+        <p>A group of young people who are passionate about technology and the internet.</p>
+      </li>
+      <li>
+        <p>We are a team of developers, designers, and writers who are dedicated to providing you with the best news and information on the internet.</p>
+      </li>
+      <li>
+        <p>
+          we are always looking for new ways to improve our site and make it more useful to our readers.
+        </p>
+      </li>
+      <li>
+        <p>
+          Always ready to help you with any questions you may have.
+        </p>
+      </li>
+      <li>
+        <p>
+          We can help you build your own website or app.
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div class="why-this-website">
+<h4>Why this website?</h4>
+<ul>
+  <li>
+    <p>
+      It's a World full of information, It's easier to get lost looking for the right information. You never know what you are going to find on the internet. You google for a single word and you have thousands of results. You have to go through all of them to find the right one. We have done the hard work for you. We have collected the best news and information from all over the internet and put them in one place. We have also made it easy for you to find what you are looking for. You can search for news by category, country, or keyword. You can also subscribe to our newsletter and get the latest news delivered to your inbox.
+    </p>
+  </li>
+<li>
+    <p>
+    Looking for relevant information is not the only problem. You also have to deal with the quality of the information. You can't trust everything you read on the internet. We have done our best to make sure that the information we provide is accurate and reliable. We have also made it easy for you to verify the information. You can always check the source of the information by clicking on the link provided.
+  </p>
+</li>
+</ul>
+  </div >
+ </div>
+ <div class="footer nav container">
+  <ul class="footer-nav">
 
-          <div class="col-xs-6 col-md-3">
-            <h6>Quick Links</h6>
-            <ul class="footer-links">
-              <li><a href="http://scanfcode.com/about/">About Us</a></li>
-              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
-         <a href="#">Scanfcode</a>.
-            </p>
-          </div>
-
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <li class="footer-nav__item">
+       <h3>Browse by category</h3>
+      <ul class="footer-sub-nav">
+    <% @categories.each do |category| %>
+    <li>
+        <a href="#<%=category.name%>"><%= category.name %></a>
+    </li>
+    <% end %>
+      </ul>
+    </li>
+    <li class="footer-nav__item">
+      <h3>Search...</h3>
+      <ul class="footer-sub-nav">
+    <li>
+            <%=form_with url: search_path  do |form|%>
+        <%= form.text_field "query", placeholder: "Search text..." %>
+<div>        <%= form.label :country,  "country" %>
+        <%= form.select "country", @countries.map{|country| country.name}.unshift(nil) %></div>
+        <%= form.submit "Search", href: "#general" %>
+        <%end%>
+    </li>
+      </ul>
+  <p>Design and develop by : <em>Tadesse Alemayehu Dubale</em></p></ul></div>
 </footer>
