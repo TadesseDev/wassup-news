@@ -5,17 +5,16 @@ export default class extends Controller {
     channelId: String,
   };
   connect() {
-    fetch("http://localhost:4000/channel-id").then((response) => {
+    fetch("http://localhost:3000/channel-id").then((response) => {
       response.json().then((data) => {
-        console.log(data);
+
         subscribe_to_initial_news(data.id);
-        fetch("http://localhost:4000/subscribe-to-news-stream").catch((err) => {
+        fetch("http://localhost:3000/subscribe-to-news-stream").catch((err) => {
           console.log(err);
           // TODO: let the user know they are not subscribed
         });
       });
     });
-    console.log("reset button is", this.resetSearchTarget);
   }
 
   reseatSearch(event) {

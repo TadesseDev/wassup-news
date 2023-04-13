@@ -29,7 +29,6 @@ class NewsController < ApplicationController
   private
 
   def set_params
-    p "params are #{params}"
     @country_name = params[:country]
     @country = Country.find_by(name: @country_name).try(:code) || @country
     @category = params[:category] || @category
@@ -47,6 +46,7 @@ class NewsController < ApplicationController
       category: @category
     }
 
+    p "params are #{params}"
     @query_params.compact!
     @url = "https://newsapi.org/v2/top-headlines?#{@query_params.to_query}"
     p "URL is : #{@url} "

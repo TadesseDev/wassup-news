@@ -6,7 +6,7 @@ export default class extends Controller {
     channelId: String,
   };
   connect() {
-    fetch("http://localhost:4000/channel-id").then((response) => {
+    fetch("http://localhost:3000/channel-id").then((response) => {
       response.json().then((data) => {
         console.log(data);
         subscribe_to_updates(data.id);
