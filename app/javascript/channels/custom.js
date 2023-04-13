@@ -105,10 +105,8 @@ export const render_search_result = (data) => {
 };
 
 export const subscribe_to_initial_news = (chanelId) => {
-
   const newsSocket = new WebSocket("ws://localhost:3000/cable");
   newsSocket.onopen = function (event) {
-
     newsSocket.send(
       JSON.stringify({
         command: "subscribe",
@@ -125,10 +123,8 @@ export const subscribe_to_initial_news = (chanelId) => {
     const streamingId = response.message?.id;
     const completed = response.message?.["data"]?.["all-don"] ?? false;
     if (completed) {
-
-      // newsSocket.close();
+      // TODO: Let the user know that the data are here.
     } else if (data && streamingId == chanelId) {
-
       render_category(data);
       // data is ready to be rendered
     }
@@ -140,7 +136,6 @@ export const subscribe_to_initial_news = (chanelId) => {
 export const subscribe_to_updates = (chanelId) => {
   const updateSocket = new WebSocket("ws://localhost:3000/cable");
   updateSocket.onopen = function (event) {
-
     updateSocket.send(
       JSON.stringify({
         command: "subscribe",
@@ -160,7 +155,6 @@ export const subscribe_to_updates = (chanelId) => {
       delete data.search;
       if (search) render_search_result(data);
       else render_category(data, true);
-
     }
   };
 };

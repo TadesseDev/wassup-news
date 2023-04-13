@@ -2,7 +2,6 @@ class UpdateJob
   include Sidekiq::Job
 
   def perform(url, category, channel_id, search)
-    p
     response = HTTParty.get(url)
     if response.code == 200
       stream_to_channel(

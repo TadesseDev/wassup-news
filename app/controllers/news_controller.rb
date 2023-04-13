@@ -1,5 +1,8 @@
 class NewsController < ApplicationController
+  # setup all the query params, filter out the ones that are not needed, set the final url, all the other methods will use this url to make the request.
   before_action :set_params
+
+# if json respond with async_perform, if not initialize the session
   def index
     render json: perform_sync if request.format.json?
     @new_subscription = Subscription.new
@@ -14,10 +17,11 @@ class NewsController < ApplicationController
   end
 
   def next_page
-    # JSON requests can use the root path to load the next page by setting the page and category param
-
+    # JSON requests can use the root path to load the next page by setting the page+1 and category param
     UpdateJob.perform_async(@url, @category, session.id.to_s, false)
   end
+
+
   def channel_id
     render json: { id: session.id.to_s }
   end
@@ -25,6 +29,7 @@ class NewsController < ApplicationController
   def subscribe_to_news_stream
     LoadNewsJob.perform_async(@url, @category, session.id.to_s)
   end
+
 
   private
 
@@ -36,10 +41,10 @@ class NewsController < ApplicationController
     @pageSize = params[:pageSize] || @pageSize
     @keyWord = params[:query]
 
-    @country = "us" if (@keyWord.nil? && @country.nil?)
+    @country = "us" if (@keyWord.nil? && @country.nil?) # the query is required to have a country or a query param set.
     @query_params = {
       apiKey: @apiKey,
-      country: @country, # this is a required field in the query params
+      country: @country,
       page: @page,
       pageSize: @pageSize,
       q: @keyWord,

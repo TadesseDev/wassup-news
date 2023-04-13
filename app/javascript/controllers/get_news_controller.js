@@ -18,11 +18,7 @@ export default class extends Controller {
   }
 
   reseatSearch(event) {
-    // reset the search container
-    // TODO: Implement functionality
-    // event.target.parentElement.getElementsByClassName("articles")[0].innerHTML =
-    "";
-    // event.target.parentElement.style.display = "none";
+
     const searchContainer = event.target.closest("#search-results");
     searchContainer.getElementsByClassName("articles")[0].innerHTML = "";
     searchContainer.style.display = "none";

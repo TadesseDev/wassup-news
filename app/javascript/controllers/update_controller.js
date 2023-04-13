@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import { subscribe_to_updates } from "../channels/custom";
-// Connects to data-controller="update"
+
 export default class extends Controller {
   static values = {
     channelId: String,
