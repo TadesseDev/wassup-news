@@ -124,6 +124,16 @@ Once you are on the website, you can use the following features:
 - **Read more**: Click on any news story to read the full article on the original source website.
 
 Please note that as of now, the application is not deployed online, so you will need to run it locally on your machine to access the website. Once the application is deployed, you will be able to access it online and use its features from anywhere.
+## Future Features
+
+Wassup-News is an ongoing project and we are always looking for ways to improve it. Here are some of the features we plan to add in the future:
+
+- **Deploy to AWS**: We plan to deploy Wassup-News on Amazon Web Services (AWS) to increase the website's reliability and scalability.
+- **Enhanced Filtering**: We plan to improve the filtering functionality by adding more options for filtering news, such as by language, date, and popularity.
+- **Social Media Integration**: We plan to integrate Wassup-News with social media platforms so that users can share articles they like on their favorite social media channels.
+
+We are open to suggestions for other features that you would like to see added to Wassup-News. If you have any ideas, please feel free to submit an issue or pull request on our GitHub repository!
+
 
 
 ## Contributing
