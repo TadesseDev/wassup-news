@@ -66,6 +66,7 @@ Start the Rails server:
 ``` bash
 rails s
 ```
+> Please make sure to do `db:setup` or `db:create, db:migrate, db:seed` exaclty once. Doing the seed file more than once causes mre than once copy of country and categories.
 ### Using Docker
 If you prefer to use Docker, you can use the public Docker image we have published on Docker Hub. To get started with the Docker image, follow these steps:
 
