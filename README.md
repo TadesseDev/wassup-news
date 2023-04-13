@@ -5,6 +5,7 @@ Our website collects news from over 80,000 blogs and news channels from around t
 ## Table of Contents
 
 * [Is it for you?](#getting-started)
+* [Feature previw](#getting-started)
 * [Getting Started](#getting-started)
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
@@ -24,6 +25,9 @@ This project is ideal for people who:
 - Are looking for a user-friendly news platform that is easy to navigate and use
 
 Whether you're a casual news reader or a journalist who needs to stay on top of the latest news for your work, Wassup-News is a valuable resource that can help you stay informed and up to date.
+## Feature previw
+[Screencast from 14-04-2023 12:02:20 ጡዋት.webm](https://user-images.githubusercontent.com/69077061/231882688-7e860597-90f9-49b3-9a4f-99219ab8f7d8.webm)
+
 ## Getting Started
 
 Getting Started
