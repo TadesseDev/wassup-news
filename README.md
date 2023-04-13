@@ -31,11 +31,11 @@ To get started with our Rails app, follow these steps:
 
 ### Prerequisites
 - [ ] Ruby 3.1.2
-- [ ] Rails 6.1.4
+- [ ] Rails 7.0.4
 - [ ] PostgreSQL 14.7
 - [ ] Redis 7.0
 - [ ] Sidekiq gem
-- [ ] API key for [https://newsapi.org/]
+- [ ] API key from [newsapi](https://newsapi.org/)
 ### Installation
 1. Clone the repository from GitHub:
 
@@ -90,22 +90,22 @@ docker compose up
 ### Prerequisites
 
 - [ ] Ruby 3.1.2
-- [ ] Rails 6.1.4
+- [ ] Rails 7.0.4
 - [ ] PostgreSQL 14.7
 - [ ] Redis 7.0
 - [ ] Sidekiq gem
-- [ ] API key for [https://newsapi.org/]
+- [ ] API key from [newsapi](https://newsapi.org/)
 
 ### Installation
 
 To install Wassup-News on your local machine, follow these steps:
 
-Clone the repository from GitHub: git clone https://github.com/TadesseDev/wassup-news.git
-Install the required dependencies: bundle install
-Create and setup the database: rake db:create db:migrate db:seed
-Start the Redis server: redis-server
-Start the Sidekiq worker: bundle exec sidekiq
-Start the Rails server: rails server
+- Clone the repository from GitHub: git clone https://github.com/TadesseDev/wassup-news.git
+- Install the required dependencies: bundle install
+- Create and setup the database: rake db:create db:migrate db:seed
+- Start the Redis server: redis-server
+- Start the Sidekiq worker: bundle exec sidekiq
+- Start the Rails server: rails server
 
 ## Usage
 
@@ -138,7 +138,6 @@ We welcome contributions to Wassup-News from anyone who is interested in improvi
 Before contributing, please make sure to read our [Code of Conduct](https://github.com/TadesseDev/wassup-news/blob/main/CODE_OF_CONDUCT.md) to ensure that your contributions align with our community standards. Thank you for your interest in contributing to Wassup-News!
 
 
-## License
 
 ## License
 
@@ -158,7 +157,6 @@ We'd like to thank the following individuals and projects for their contribution
 - [Redis](https://redis.io/) for their in-memory data structure store that is used as a database and cache in Wassup-News.
 - [PostgreSQL](https://www.postgresql.org/) for their open source relational database management system that is used as the main database for Wassup-News.
 - [Ruby on Rails](https://rubyonrails.org/) for their web application framework that is used to build Wassup-News.
-- [Bootstrap](https://getbootstrap.com/) for their open source CSS framework that is used for styling the Wassup-News website.
 - [Font Awesome](https://fontawesome.com/) for their icon toolkit that is used in Wassup-News.
 
 We also want to express our gratitude to all the contributors who have helped make this project better by submitting bug reports, feature suggestions, and pull requests. Thank you all for your support!
