@@ -28,4 +28,6 @@ ENV RAILS_SERVE_STATIC_FILES true
 
 # Start the app server
 RUN bundle exec rake db:migrate
+RUN bundle exec rake db:prepare
+RUN bundle exec sidekiq
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
