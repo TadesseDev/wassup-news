@@ -12,7 +12,6 @@ export const render_category = (data, update = false) => {
     if (category != "general") page.value = 1;
   }
   articlesDOM.classList.add("articles");
-  console.log(articles, articles?.length);
   if (!articles || articles?.length < 1) {
     const div = document.createElement("div");
     div.classList.add("articles");
@@ -61,7 +60,7 @@ export const render_category = (data, update = false) => {
 
 export const render_search_result = (data) => {
   const articles = Object.values(data)[0].articles;
-  console.log(articles);
+
   const searchResultDOM = document.getElementById("search-results");
   const articlesDOM = searchResultDOM.getElementsByClassName("articles")[0];
   searchResultDOM.style.display = "block";
@@ -106,10 +105,10 @@ export const render_search_result = (data) => {
 };
 
 export const subscribe_to_initial_news = (chanelId) => {
-  console.log("subscribing");
-  const newsSocket = new WebSocket("ws://localhost:4000/cable");
+
+  const newsSocket = new WebSocket("ws://localhost:3000/cable");
   newsSocket.onopen = function (event) {
-    console.log("Connected to news channel");
+
     newsSocket.send(
       JSON.stringify({
         command: "subscribe",
@@ -126,10 +125,10 @@ export const subscribe_to_initial_news = (chanelId) => {
     const streamingId = response.message?.id;
     const completed = response.message?.["data"]?.["all-don"] ?? false;
     if (completed) {
-      console.log("closing socket");
+
       // newsSocket.close();
     } else if (data && streamingId == chanelId) {
-      console.log(data);
+
       render_category(data);
       // data is ready to be rendered
     }
@@ -139,9 +138,9 @@ export const subscribe_to_initial_news = (chanelId) => {
 };
 
 export const subscribe_to_updates = (chanelId) => {
-  const updateSocket = new WebSocket("ws://localhost:4000/cable");
+  const updateSocket = new WebSocket("ws://localhost:3000/cable");
   updateSocket.onopen = function (event) {
-    console.log("Connected to update channel");
+
     updateSocket.send(
       JSON.stringify({
         command: "subscribe",
@@ -161,7 +160,7 @@ export const subscribe_to_updates = (chanelId) => {
       delete data.search;
       if (search) render_search_result(data);
       else render_category(data, true);
-      console.log("Message from update channel", data);
+
     }
   };
 };
