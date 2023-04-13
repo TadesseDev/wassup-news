@@ -40,6 +40,7 @@ To get started with our Rails app, follow these steps:
 - [ ] Redis 7.0
 - [ ] Sidekiq gem
 - [ ] API key from [newsapi](https://newsapi.org/)
+> for the time being, the API key can only be used for 100 request per 20 hours and no more than 50 request in an hour.  use your  key wisely.
 ### Installation
 1. Clone the repository from GitHub:
 
@@ -114,7 +115,7 @@ To install Wassup-News on your local machine, follow these steps:
 
 ## Usage
 
-To use Wassup-News, you can either subscribe to receive daily, weekly, or monthly news updates or visit the website directly. 
+To use Wassup-News, you can either subscribe to receive daily, weekly, or monthly news updates or visit the website directly.
 
 Once you are on the website, you can use the following features:
 
@@ -156,9 +157,9 @@ Before contributing, please make sure to read our [Code of Conduct](https://gith
 
 ## License
 
-Wassup-News is licensed under the [MIT License](https://opensource.org/licenses/MIT). 
+Wassup-News is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-You can find a copy of the license in the [LICENSE](https://github.com/TadesseDev/wassup-news/LICENSE) file. 
+You can find a copy of the license in the [LICENSE](https://github.com/TadesseDev/wassup-news/LICENSE) file.
 
 Please note that this license only applies to the Wassup-News source code and does not cover any of the news content obtained from external sources.
 
